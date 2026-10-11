@@ -1,0 +1,90 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.env
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/README.md
+tests/.tmp/
+artifacts/
+
+# Frozen reference files are not edited by Foundation. Keep runtime credentials out of version control.
+legacy/**/.env*
+legacy/**/state/
+legacy/**/logs/
+
+# Unified development outputs and private files
+.env.*
+!.env.example
+**/.venv/
+**/__pycache__/
+node_modules/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite*
+*.log
+*.pyc
+*.pyo
+*.exe
+*.dll
+*.pyd
+portable-work/TradingLabPortable/
+portable-work/validation/
+portable-work/dev-*/
+portable-work/source-backup-*.zip
+portable-work/*-results.json
+tests/tmp/
+tests/history-test-*/
+tests/shadow-drill-*/
+logs/
+
+# Recreated local DEV runtime, artifacts, data and evidence; never ordinary Git.
+.dev/
+
+# Explicitly reviewed, token-free STEP03 evidence logs.
+!docs/migration/step03/*.log
+
+# Private Telegram recipient authorization; only the empty template is publishable.
+.env.telegram
+!.env.telegram.example
+
+# STEP06: runtime artifacts, generated state and private/historical copies.
+/runtime/
+/sandbox/
+/backups/
+/backup/
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.whl
+*.msi
+*.pdb
+*.so
+*.dylib
+*.bak
+*.backup
+*.pem
+*.key
+*.p12
+*.pfx
+*.db-journal
+*.sqlite-journal
+*.sqlite3-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+tests/*-test-*/
+tests/*-drill-*/
+
+# Preserve these old synthetic account/runtime captures locally, outside Git.
+# Their historical reports and indexes remain unchanged.
+/docs/migration/step04/a3-runtime.json
+/docs/migration/step04/b3-runtime.json
+/docs/migration/step04/post-test-integrity.json

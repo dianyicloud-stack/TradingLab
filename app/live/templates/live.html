@@ -1,0 +1,20 @@
+<details id="history-today" hidden class="subpanel"><summary id="history-today-title">今日历史分析</summary><div id="history-today-items"></div><button id="history-today-more" hidden type="button">查看更多</button><p id="history-today-message"></p></details>
+<section id="history-opinion" hidden class="history-panel"><h2>历史分析</h2><p id="history-opinion-status"></p><p id="history-opinion-evidence"></p><div id="history-opinion-body"></div><details><summary>诊断原文</summary><pre id="history-opinion-original"></pre></details><a href="/live">返回实时Live</a> · <a href="/data-observation">返回数据观察</a></section>
+<section id="live-center" class="workspace-form workspace-panel" data-ui-version="live-core">
+  <div class="toolbar"><div><span class="eyebrow">LIVE</span><h2>Live 实时市场</h2></div><span class="pill">实时观察 · AI辅助判断 · 影子账户</span></div>
+  <p id="live-status" role="status">正在读取连接状态…</p>
+  <p id="runtime-live-summary" role="status">正在读取后台状态…</p>
+  <section id="real-controls"><p><button id="watcher-start">启动实时监听</button> <button id="watcher-stop">停止实时监听</button> <button id="live-refresh">刷新</button></p><p id="live-workspace"></p></section>
+  <section id="execution-binding" class="toolbar"><label>当前执行账户<select id="execution-account"><option value="">未选择执行账户</option></select></label><span id="execution-account-state"></span><a href="/account">管理组合账户</a><p>所有实时股票共用此账户；自动影子执行模式下，手动立即分析也可能模拟成交。</p></section>
+  <details class="subpanel"><summary>AI设置</summary><form id="advisory-global-settings" class="toolbar">
+    <p><a href="/system#ai-model-settings">到 System 设置默认模型</a>；下方模型为当前默认，只影响新任务。实时意见会按已绑定账户策略处理。</p><label>AI服务 <select id="advisory-global-provider" disabled></select></label><label>模型 <select id="advisory-global-model" disabled></select></label>
+    <label>思考强度 <select id="advisory-global-reasoning" disabled><option value="none">关闭额外思考</option><option value="low">低（推荐）</option><option value="high">高</option><option value="max">最高</option></select></label>
+    <label>AI自动分析 <select id="advisory-global-auto"><option value="OFF">关闭</option><option value="IMPORTANT_ONLY">仅重要事件</option><option value="ALL_EVENTS">所有事件</option></select></label>
+    <label>事件聚合秒数 <input id="advisory-debounce" type="number" min="3" max="5" step="0.5"></label>
+    <label>新鲜阈值（秒） <input id="fresh-seconds" type="number" min="1"></label><label>陈旧阈值（秒） <input id="delayed-seconds" type="number" min="2"></label><button>保存全局设置</button>
+  </form></details>
+  <section id="stock-filter"><h3>观察股票</h3><div id="observed-stocks"></div></section>
+  <section class="reading-toolbar"><p id="reading-summary"></p><button id="collapse-all" type="button">全部收起</button> <button id="expand-all" type="button">全部展开</button><span> 收起只影响阅读，后台同步与已启用的分析继续运行。</span></section>
+  <div id="advisory-cards"></div>
+
+</section>

@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path'),{chromium}=require(path.resolve(path.dirname(process.execPath),'../node_modules/playwright'));
+const [base,out]=process.argv.slice(2);
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'}),page=await browser.newPage();const r={checks:[],pageerror:[],console_error:[]};
+page.on('pageerror',e=>r.pageerror.push(e.message));page.on('console',e=>{if(e.type()==='error')r.console_error.push(e.text())});
+await page.route('**/*',q=>{const u=new URL(q.request().url());if(u.origin===base)return q.continue();if(u.hostname.endsWith('.kaspersky-labs.com'))return q.fulfill({status:200,body:'/* TEST isolate security injection */',contentType:'text/javascript'});return q.abort()});
+const check=(v,label)=>{if(!v)throw Error(label);r.checks.push(label)},evidence=async()=>await(await page.request.get(base+'/test/evidence')).json();
+try{await page.goto(base+'/system');await page.waitForFunction(()=>document.getElementById('maintenance-summary').textContent.includes('未启用'));const before=await evidence();
+check(await page.locator('#maintenance-apply').isDisabled(),'disabled policy cannot clean from UI');
+await page.waitForTimeout(5500);check((await evidence()).owner_reads===before.owner_reads,'System GET and polling do not scan owners');
+await page.locator('#maintenance-preview').click();await page.waitForFunction(()=>document.getElementById('maintenance-result').textContent.includes('提交'));await page.waitForTimeout(1500);
+check((await evidence()).owner_reads>before.owner_reads,'preview submits background owner work');
+const denied=await(await page.request.post(base+'/api/system/maintenance/apply',{data:{}})).json();check(denied.status==='POLICY_DISABLED','backend independently refuses disabled cleanup');
+check((await evidence()).provider_calls===0,'no provider call');check(!(await evidence()).policy_enabled,'policy remains disabled');
+await page.screenshot({path:path.join(out,'system.png'),fullPage:true});check(!r.pageerror.length&&!r.console_error.length,'pageerror=0 console.error=0');r.status='PASS';
+}catch(e){r.status='FAIL';r.failure=e.stack}finally{fs.writeFileSync(path.join(out,'result.json'),JSON.stringify(r,null,2));console.log(JSON.stringify(r));await browser.close();process.exitCode=r.status==='PASS'?0:1}})();

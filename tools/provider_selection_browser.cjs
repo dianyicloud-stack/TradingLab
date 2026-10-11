@@ -1,0 +1,22 @@
+const path=require('path'),assert=require('assert');
+const {chromium}=require(path.resolve(path.dirname(process.execPath),'../node_modules/playwright'));
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage();let errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+const base=process.argv[2];try{
+await page.goto(base+'/system');await page.locator('#ai-current').filter({hasText:'deepseek-v4-pro'}).waitFor();
+await page.selectOption('#ai-provider','openai');await page.selectOption('#ai-model','gpt-5.4-mini');await page.selectOption('#ai-effort','medium');
+await page.getByRole('button',{name:'保存默认配置'}).click();await page.locator('#ai-result').filter({hasText:'没有调用 AI'}).waitFor();
+await page.reload();await page.locator('#ai-current').filter({hasText:'gpt-5.4-mini'}).waitFor();assert.equal(await page.inputValue('#ai-effort'),'medium');
+await page.goto(base+'/live');await page.locator('.advisory-card').first().waitFor();
+await page.click('#expand-all');
+const a=page.locator('.advisory-card[data-symbol="bj920161"]');await a.getByText('个股AI设置',{exact:true}).click();
+await a.locator('details').filter({hasText:'个股AI设置'}).locator('select').nth(0).selectOption('deepseek');
+await a.getByRole('button',{name:'保存个股设置'}).click();await a.locator('.advisory-message').filter({hasText:'设置已保存'}).waitFor();
+await Promise.all([page.waitForResponse(r=>r.url().endsWith('/api/live/advisory/settings')&&r.request().method()==='PUT'),a.getByRole('button',{name:'模型跟随默认'}).click()]);
+const current=await page.request.get(base+'/api/live/advisory/settings');const settings=await current.json();assert.equal(settings.global.provider,'openai');assert(!settings.overrides.bj920161?.provider);
+await page.goto(base+'/data-observation');await page.locator('#history-provider option').first().waitFor({state:'attached'});
+assert.equal(await page.inputValue('#history-provider'),'openai');assert.equal(await page.inputValue('#history-effort'),'medium');
+await page.goto(base+'/system');await page.locator('#ai-current').filter({hasText:'gpt-5.4-mini'}).waitFor();
+page.once('dialog',d=>d.accept());await page.click('#ai-verify');await page.locator('#ai-result').filter({hasText:'验证通过'}).waitFor();
+assert.deepEqual(errors,[]);console.log(JSON.stringify({system_save_restart_read:true,live_override_follow_default:true,history_selection:true,fake_verification:true,pageerror:0,console_error:0}));
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1);});

@@ -1,0 +1,11 @@
+{
+  "source": "TEST",
+  "test_run_id": "tradinglab-dev",
+  "web_port": 18765,
+  "agent_port": 18766,
+  "core_data": ".dev/data",
+  "agent_data": ".dev/agent",
+  "market_network": false,
+  "real_ai": false,
+  "telegram": false
+}

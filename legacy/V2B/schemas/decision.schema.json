@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.v2b/schemas/decision.schema.json",
+  "title": "V2B Unified Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "decision_id", "provider", "model", "handoff_id",
+    "tracking_session_id", "symbol", "analyzed_at", "market_state",
+    "structure_state", "action", "key_levels", "invalidation",
+    "reason_summary", "processed_through_seq",
+    "processed_through_observation_time", "confidence"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "decision_id": { "type": "string", "pattern": "^DEC-[0-9]{8}-[0-9]{6}-[A-Z0-9]{6}$" },
+    "provider": { "type": "string", "minLength": 1 },
+    "model": { "type": "string", "minLength": 1 },
+    "handoff_id": { "type": "string", "minLength": 1 },
+    "tracking_session_id": { "type": "string", "minLength": 1 },
+    "symbol": { "type": "string", "minLength": 1 },
+    "analyzed_at": { "type": "string", "format": "date-time" },
+    "market_state": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "structure_state": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "action": { "enum": ["HOLD", "WATCH", "EXIT", "NO_ACTION"] },
+    "key_levels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["support", "reference", "resistance"],
+      "properties": {
+        "support": { "type": ["number", "null"] },
+        "reference": { "type": ["number", "null"] },
+        "resistance": { "type": ["number", "null"] }
+      }
+    },
+    "invalidation": { "type": "string", "minLength": 1, "maxLength": 500 },
+    "reason_summary": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": { "type": "string", "minLength": 1, "maxLength": 300 }
+    },
+    "processed_through_seq": { "type": ["integer", "null"], "minimum": 0 },
+    "processed_through_observation_time": {
+      "oneOf": [{ "type": "null" }, { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }]
+    },
+    "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+  }
+}

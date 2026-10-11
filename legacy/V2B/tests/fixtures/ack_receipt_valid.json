@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "receipt_type": "ACK_APPLIED",
+  "receipt_id": "AR-ACK-20260904-204059-6C2284234584",
+  "generated_at": "2026-09-04T20:41:00+08:00",
+  "ack_id": "ACK-20260904-204059-6C2284234584",
+  "decision_id": "DEC-20260903-223831-3CE328",
+  "handoff_id": "EHO-20260903-220548-450B",
+  "tracking_session_id": "TS-20260901-bj920161-01",
+  "symbol": "bj920161",
+  "applied_event_seq": 17,
+  "applied_observation_time": "10:15",
+  "status": "APPLIED",
+  "source": "V2A",
+  "previous_event_seq": 15,
+  "previous_observation_time": "10:05",
+  "ack_payload": {
+    "schema_version": "1.0",
+    "ack_type": "DECISION_CONFIRMATION",
+    "ack_id": "ACK-20260904-204059-6C2284234584",
+    "decision_id": "DEC-20260903-223831-3CE328",
+    "job_id": "JOB-20260903-223729-EC8F5B",
+    "handoff_id": "EHO-20260903-220548-450B",
+    "tracking_session_id": "TS-20260901-bj920161-01",
+    "symbol": "bj920161",
+    "confirmed_action": "EXIT",
+    "processed_through_seq": 17,
+    "processed_through_observation_time": "10:15",
+    "request_fingerprint": "e6bc99674f2c1b17def319d495dceadbc6312482c1acf002e1fad60ce1559c1c",
+    "review_id": "REV-20260904-204059-8EC6753AB1F2",
+    "source": "V2B_MANUAL_ACCEPT"
+  }
+}

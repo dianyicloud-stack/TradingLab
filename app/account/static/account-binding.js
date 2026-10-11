@@ -1,0 +1,9 @@
+(() => {'use strict';
+if(new URLSearchParams(location.search).has('history'))return;
+const select=document.getElementById('execution-account'),status=document.getElementById('execution-account-state');if(!select)return;
+let version=null,busy=false,stopped=false,timer;
+const channel=new BroadcastChannel('tradinglab.portfolio.changed'),mode={OFF:'关闭账户响应',ADVISORY_ONLY:'只给建议',AUTO_SHADOW_EXECUTION:'自动影子执行'};
+async function refresh(){if(busy||stopped)return;busy=true;try{const [catalog,binding]=await Promise.all([fetch('/api/accounts').then(r=>r.json()),fetch('/api/accounts/execution-binding').then(r=>r.json())]);if(!Array.isArray(catalog.accounts)||binding.error)throw Error();version=binding.binding_version;if(document.activeElement!==select){select.replaceChildren();for(const a of [{account_id:'',name:'未选择执行账户'},...catalog.accounts]){const o=document.createElement('option');o.value=a.account_id;o.textContent=a.name;select.append(o);}select.value=binding.account_id||'';}status.textContent=binding.account_id?`${mode[binding.mode]} · 新增风险${binding.new_risk_paused?'已暂停':'允许'}`:'AI 与通知继续运行；不执行交易';}catch{status.textContent='账户配置暂不可读，请重试';}finally{busy=false;}}
+select.onchange=async()=>{if(busy)return;busy=true;select.disabled=true;try{const r=await fetch('/api/accounts/execution-binding',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({account_id:select.value||null,binding_version:version})});if(!r.ok){status.textContent='账户设置已变化，请重新选择';}else{channel.postMessage({bindingChanged:true});}}finally{busy=false;select.disabled=false;select.blur();await refresh();}};
+channel.onmessage=()=>refresh();async function poll(){await refresh();if(!stopped)timer=setTimeout(poll,10000);}poll();window.addEventListener('pagehide',e=>{if(!e.persisted){stopped=true;clearTimeout(timer);channel.close();}});
+})();

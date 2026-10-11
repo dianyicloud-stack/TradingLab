@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object","additionalProperties":false,
+  "required":["action","confidence","current_state","game_state","dominant_side","dominance_score","dominance_trend","core_conflict","evidence","invalidation","key_levels","scenario_tree","next_observation_focus","previous_hypothesis_review"],
+  "properties":{
+    "portfolio_plan":{"type":"object","additionalProperties":false,"required":["portfolio_action","reason"],"properties":{"portfolio_action":{"type":"string","enum":["NONE","OPEN","ADD","REDUCE","EXIT","HOLD"]},"target_weight":{"type":"number","minimum":0,"maximum":1},"reason":{"type":"string"}}},
+    "action":{"type":"string","enum":["NO_ACTION","WATCH","WAIT","HOLD","ADD","REDUCE","EXIT"]},
+    "confidence":{"type":"integer","minimum":0,"maximum":100},
+    "current_state":{"type":"string","minLength":1,"maxLength":2400},
+    "game_state":{"oneOf":[{"type":"string","minLength":1,"maxLength":3000},{"type":"object","additionalProperties":false,"required":["summary","buyer_state","seller_state","absorption_state","initiative_side","supply_pressure","demand_strength","price_impact_state"],"properties":{"summary":{"type":"string","minLength":1,"maxLength":1800},"buyer_state":{"type":"string","maxLength":1000},"seller_state":{"type":"string","maxLength":1000},"absorption_state":{"type":"string","maxLength":1000},"initiative_side":{"type":"string","maxLength":200},"supply_pressure":{"type":"string","maxLength":600},"demand_strength":{"type":"string","maxLength":600},"price_impact_state":{"type":"string","maxLength":600}}}]},
+    "dominant_side":{"type":"string","enum":["BUYER","SELLER","BALANCED","UNCLEAR"]},
+    "dominance_score":{"type":"number","minimum":0,"maximum":10},
+    "dominance_trend":{"type":"string","enum":["STRENGTHENING","WEAKENING","STABLE","REVERSING","UNCLEAR"]},
+    "core_conflict":{"type":"string","minLength":1,"maxLength":1800},
+    "evidence":{"type":"array","items":{"type":"string","minLength":1,"maxLength":1000},"maxItems":20},
+    "invalidation":{"type":"array","items":{"type":"string","minLength":1,"maxLength":1000},"maxItems":12},
+    "key_levels":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["label","price","meaning"],"properties":{"label":{"type":"string"},"price":{"type":["number","null"]},"meaning":{"type":"string"}}},"maxItems":12},
+    "scenario_tree":{"type":"array","minItems":1,"maxItems":5,"items":{"type":"object","additionalProperties":false,"required":["scenario_id","label","conditions","interpretation","recommended_action","confirmation","invalidation"],"properties":{"scenario_id":{"type":"string","pattern":"^[A-Z][A-Z0-9_]{0,31}$"},"label":{"type":"string"},"conditions":{"type":"array","items":{"type":"string"}},"interpretation":{"type":"string"},"recommended_action":{"type":"string"},"confirmation":{"type":"array","items":{"type":"string"}},"invalidation":{"type":"array","items":{"type":"string"}}}}},
+    "next_observation_focus":{"type":"array","items":{"oneOf":[{"type":"string","minLength":1,"maxLength":1000},{"type":"object","additionalProperties":false,"required":["target","watch_for","meaning"],"properties":{"target":{"type":"string","minLength":1,"maxLength":300},"watch_for":{"type":"string","minLength":1,"maxLength":600},"meaning":{"type":"string","minLength":1,"maxLength":600}}}]},"maxItems":12},
+    "previous_hypothesis_review":{"type":"object","additionalProperties":false,"required":["status","reason"],"properties":{"status":{"type":"string","enum":["CONFIRMED","STRENGTHENED","WEAKENED","INVALIDATED","UNCHANGED","INSUFFICIENT_EVIDENCE"]},"reason":{"type":"string","minLength":1,"maxLength":1800},"previous_advisory_id":{"type":["string","null"]},"previous_generated_at":{"type":["string","null"]},"previous_dominant_side":{"type":["string","null"]},"previous_dominance_score":{"type":["number","null"]},"previous_action":{"type":["string","null"]}}}
+  }
+}

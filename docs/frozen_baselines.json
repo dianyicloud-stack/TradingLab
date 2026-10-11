@@ -1,0 +1,598 @@
+{
+  "manifest_version": 2,
+  "captured_at": "2026-09-05T06:05:48.2263652Z",
+  "finalized_on": "2026-09-05",
+  "copy_time_note": "Original copy time unavailable; filesystem creation time is observational metadata, not proof of copy time.",
+  "authoritative_baselines": [
+    {
+      "version": "V2A.1.2.1",
+      "path": "legacy/V2A/量价查询_V2A.1.2.1_每日状态重置_放弃即删除(4).html",
+      "sha256": "5fb58532d16628694239459c059d42fa2c7d889622a9893983ba2671ff412df6",
+      "status": "FROZEN"
+    },
+    {
+      "version": "V2A.1.2.2",
+      "path": "legacy/V2A/量价查询_V2A.1.2.2_Decision_ACK导入版.html",
+      "sha256": "fd155f387747551a603b21ac0f54e7618ef3e47f95bf5ab0b2bc13043441f2ae",
+      "status": "FINAL_ACCEPTED_FROZEN"
+    }
+  ],
+  "historical_references": [
+    {
+      "version": "V2A.1.2.2",
+      "source_path": "LOCAL_HISTORICAL_SOURCE/量价查询_V2A.1.2.2_Decision_ACK导入版_验收修补前备份_20260904.html",
+      "sha256": "c5921ca8a62490d4d8ec70e903b4ea983d1d185341743dad2189113e5dba72d2",
+      "status": "PRE_FIX_HISTORICAL_SNAPSHOT",
+      "included_in_final_legacy": false
+    }
+  ],
+  "files": [
+    {
+      "path": "legacy/account_engine/account.py",
+      "sha256": "58735261be0908d52a65f48defb3796de5cea33dfa94e2fa0afb3e19d6fc47bf",
+      "bytes": 5613,
+      "observed_creation_time_utc": "2026-09-05T05:51:36.3654068Z",
+      "observed_last_write_time_utc": "2026-08-29T05:32:41.3004474Z"
+    },
+    {
+      "path": "legacy/account_engine/config.json",
+      "sha256": "ae46efe7d6f64ee42002fd647cf7bc3b3327034c625cf2acc44afbaa13537b91",
+      "bytes": 1876,
+      "observed_creation_time_utc": "2026-09-05T05:51:36.3719930Z",
+      "observed_last_write_time_utc": "2026-08-29T05:32:41.3156130Z"
+    },
+    {
+      "path": "legacy/account_engine/engine.py",
+      "sha256": "56b181b3a4f4cd34269a6ab1f1eb4a47a7933cec3cc37f10c3882bb259d4f6e9",
+      "bytes": 77124,
+      "observed_creation_time_utc": "2026-09-05T05:51:36.3719930Z",
+      "observed_last_write_time_utc": "2026-08-29T05:54:06.4743953Z"
+    },
+    {
+      "path": "legacy/account_engine/README.md",
+      "sha256": "b1cb0c40d7456aa971a43c083426d95cb54663abcf3d386fe189cf629ffd994c",
+      "bytes": 13047,
+      "observed_creation_time_utc": "2026-09-05T05:51:36.3862591Z",
+      "observed_last_write_time_utc": "2026-08-29T05:55:11.9325315Z"
+    },
+    {
+      "path": "legacy/account_engine/reporting.py",
+      "sha256": "8eebcf2b592b9b918868c0fa8b35b3f1f5a303fe79ae9cde1247398732bb9040",
+      "bytes": 19963,
+      "observed_creation_time_utc": "2026-09-05T05:51:36.3862591Z",
+      "observed_last_write_time_utc": "2026-08-29T05:54:06.4733954Z"
+    },
+    {
+      "path": "legacy/tests/legacy_fixtures/sample_ack_receipt.json",
+      "sha256": "f29164e96e7184e05fba965e4e7052e5c6dbfd4d9ac9707055272a72672ba0b9",
+      "bytes": 1217,
+      "observed_creation_time_utc": "2026-09-05T05:50:50.9095821Z",
+      "observed_last_write_time_utc": "2026-09-05T01:41:18.3225550Z"
+    },
+    {
+      "path": "legacy/tests/legacy_fixtures/sample_intraday_handoff.json",
+      "sha256": "b7bcdfa28a0edb0150f925fba8227a6ac828e0fe495dad9646a0a1126fcbb6e8",
+      "bytes": 4563,
+      "observed_creation_time_utc": "2026-09-05T05:49:32.6881971Z",
+      "observed_last_write_time_utc": "2026-09-03T14:05:48.9201315Z"
+    },
+    {
+      "path": "legacy/V2A/量价查询_V2A.1.2.1_每日状态重置_放弃即删除(4).html",
+      "sha256": "5fb58532d16628694239459c059d42fa2c7d889622a9893983ba2671ff412df6",
+      "bytes": 374184,
+      "observed_creation_time_utc": "2026-09-05T05:38:08.2087757Z",
+      "observed_last_write_time_utc": "2026-09-03T06:51:30.9858022Z"
+    },
+    {
+      "path": "legacy/V2A/量价查询_V2A.1.2.2_Decision_ACK导入版.html",
+      "sha256": "fd155f387747551a603b21ac0f54e7618ef3e47f95bf5ab0b2bc13043441f2ae",
+      "bytes": 411877,
+      "observed_creation_time_utc": "2026-09-05T05:35:37.8860515Z",
+      "observed_last_write_time_utc": "2026-09-04T14:08:19.1284174Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/.env.example",
+      "sha256": "7616a22c23fc202f32ac1c4da642dee377560f6e9e603c100b1a7a5f4a14329d",
+      "bytes": 128,
+      "observed_creation_time_utc": "2026-09-05T05:39:56.0614314Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9669474Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/.gitignore",
+      "sha256": "4ddbe94c692fcc6c949368ece66b971a65d616ac0007de59dbf7ae12440e8847",
+      "bytes": 141,
+      "observed_creation_time_utc": "2026-09-05T05:39:56.0624321Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9943312Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/config -bak.yaml",
+      "sha256": "6278f7164573e6e19d58ac75d77fea306e75b158a88161055f1bc6ba965d4a4f",
+      "bytes": 1658,
+      "observed_creation_time_utc": "2026-09-05T05:39:56.0634320Z",
+      "observed_last_write_time_utc": "2026-09-01T14:43:01.8526806Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/config.yaml",
+      "sha256": "ee39a20473011e8c2b7c2aaa74f889d6cb6c6b396bc673ddeae3460f5fa70dbd",
+      "bytes": 1718,
+      "observed_creation_time_utc": "2026-09-05T05:39:56.0674322Z",
+      "observed_last_write_time_utc": "2026-09-03T14:04:07.5537691Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/pytest.ini",
+      "sha256": "ea71c312e6a2e7a9acd936459d6f37a750d3ef23de194640a05dd27273f14c4a",
+      "bytes": 96,
+      "observed_creation_time_utc": "2026-09-05T05:39:56.0684322Z",
+      "observed_last_write_time_utc": "2026-09-01T13:23:59.7627913Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/README.md",
+      "sha256": "0cc30faf47b43e1681fbedf0b2b59c18bef2956cc6b27b9989b6baf1d6e1e658",
+      "bytes": 11423,
+      "observed_creation_time_utc": "2026-09-05T05:39:56.0704327Z",
+      "observed_last_write_time_utc": "2026-09-04T14:38:26.3777399Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/schemas/ack_receipt.schema.json",
+      "sha256": "53b44ba0ae63e37e838637241e6b52d962c196192bdddfeac4b38fc933ee6b39",
+      "bytes": 1581,
+      "observed_creation_time_utc": "2026-09-05T05:40:07.6644539Z",
+      "observed_last_write_time_utc": "2026-09-04T14:39:48.2684005Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/schemas/decision.schema.json",
+      "sha256": "bb7577ddf55ddeb7907a8112ec61360526fba77a27a23078decb6dd369f1cfb2",
+      "bytes": 2131,
+      "observed_creation_time_utc": "2026-09-05T05:40:07.6654542Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9959012Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/schemas/event_handoff.schema.json",
+      "sha256": "f0e61a61396aa199d33178130920081709ed9e9e962d42a85a2143838a16336d",
+      "bytes": 3602,
+      "observed_creation_time_utc": "2026-09-05T05:40:07.6664540Z",
+      "observed_last_write_time_utc": "2026-09-01T14:24:05.0899355Z"
+    },
+    {
+      "path": "legacy/V2B_BAK/v2b_coordinator.py",
+      "sha256": "6a766e08dce9041b2f415afc9d0324208638d36111c84c603d7b4d88f9d0b580",
+      "bytes": 10210,
+      "observed_creation_time_utc": "2026-09-05T05:39:56.0734321Z",
+      "observed_last_write_time_utc": "2026-09-04T14:32:36.8642485Z"
+    },
+    {
+      "path": "legacy/V2B/.env.example",
+      "sha256": "7616a22c23fc202f32ac1c4da642dee377560f6e9e603c100b1a7a5f4a14329d",
+      "bytes": 128,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9669474Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9669474Z"
+    },
+    {
+      "path": "legacy/V2B/.gitignore",
+      "sha256": "4ddbe94c692fcc6c949368ece66b971a65d616ac0007de59dbf7ae12440e8847",
+      "bytes": 141,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9943312Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9943312Z"
+    },
+    {
+      "path": "legacy/V2B/.pytest_cache/.gitignore",
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "bytes": 37,
+      "observed_creation_time_utc": "2026-09-01T13:25:04.0745433Z",
+      "observed_last_write_time_utc": "2026-09-01T13:25:04.0745433Z"
+    },
+    {
+      "path": "legacy/V2B/.pytest_cache/CACHEDIR.TAG",
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "bytes": 191,
+      "observed_creation_time_utc": "2026-09-01T13:25:04.0745433Z",
+      "observed_last_write_time_utc": "2026-09-01T13:25:04.0755433Z"
+    },
+    {
+      "path": "legacy/V2B/.pytest_cache/README.md",
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "bytes": 302,
+      "observed_creation_time_utc": "2026-09-01T13:25:04.0745433Z",
+      "observed_last_write_time_utc": "2026-09-01T13:25:04.0745433Z"
+    },
+    {
+      "path": "legacy/V2B/.pytest_cache/v/cache/lastfailed",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "bytes": 2,
+      "observed_creation_time_utc": "2026-09-01T13:25:04.0765438Z",
+      "observed_last_write_time_utc": "2026-09-04T14:37:03.7653489Z"
+    },
+    {
+      "path": "legacy/V2B/.pytest_cache/v/cache/nodeids",
+      "sha256": "a0070d2e4412b92e8fb634926304a0b32b2fe3caecadeb13d8013375bd66c5a6",
+      "bytes": 25100,
+      "observed_creation_time_utc": "2026-09-01T13:25:04.0755433Z",
+      "observed_last_write_time_utc": "2026-09-05T01:41:39.6330938Z"
+    },
+    {
+      "path": "legacy/V2B/config -bak.yaml",
+      "sha256": "6278f7164573e6e19d58ac75d77fea306e75b158a88161055f1bc6ba965d4a4f",
+      "bytes": 1658,
+      "observed_creation_time_utc": "2026-09-01T15:06:12.3038960Z",
+      "observed_last_write_time_utc": "2026-09-01T14:43:01.8526806Z"
+    },
+    {
+      "path": "legacy/V2B/config.yaml",
+      "sha256": "ee39a20473011e8c2b7c2aaa74f889d6cb6c6b396bc673ddeae3460f5fa70dbd",
+      "bytes": 1718,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9669474Z",
+      "observed_last_write_time_utc": "2026-09-03T14:04:07.5537691Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/__init__.py",
+      "sha256": "0de9911221e7e6e747eff4d4556de96f5dbc0959c4b4161a2b555f36fc6afdfe",
+      "bytes": 317,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8179698Z",
+      "observed_last_write_time_utc": "2026-09-01T13:22:05.0841323Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/ack_receipt_manager.py",
+      "sha256": "4653563cb6e3fba387fcbcf2c23e3b557a44e92d38b4c395167f88c264f3c6ec",
+      "bytes": 13340,
+      "observed_creation_time_utc": "2026-09-04T14:32:36.8622484Z",
+      "observed_last_write_time_utc": "2026-09-04T14:39:48.2684005Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/action_policy.py",
+      "sha256": "f667115eb4cacd6871d4f5e4cc78a15d986e521264b2a257a429587600752ecb",
+      "bytes": 5499,
+      "observed_creation_time_utc": "2026-09-03T14:04:07.5517710Z",
+      "observed_last_write_time_utc": "2026-09-03T14:04:07.5517710Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/config_manager.py",
+      "sha256": "7990e895926f9f317619d0467eb72ce44f3e8449909cc270d023cf801b8d7d51",
+      "bytes": 6360,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8219691Z",
+      "observed_last_write_time_utc": "2026-09-03T14:04:07.5517710Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/decision_manager.py",
+      "sha256": "901f2dfa38903255bb391771adf7b7f06f5ebcd4d7fa50d818ac4ccd34e616c2",
+      "bytes": 4090,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8229700Z",
+      "observed_last_write_time_utc": "2026-09-03T12:54:22.0713750Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/decision_store.py",
+      "sha256": "98c3b12a31f9c688723fc5231dab61f3e89d19ac0dbc3a79a54fff0ed3a9b773",
+      "bytes": 547,
+      "observed_creation_time_utc": "2026-09-01T13:21:51.9882304Z",
+      "observed_last_write_time_utc": "2026-09-03T14:26:17.5916078Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/errors.py",
+      "sha256": "7898428e165ceeb737dbc7072ffc5b690230c358099773eac9bca7874f21ded3",
+      "bytes": 1875,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8179698Z",
+      "observed_last_write_time_utc": "2026-09-03T14:04:07.5517710Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/event_manager.py",
+      "sha256": "f50ed4ee20ba15451349bd00ae4c2c920ffb7c5537ed85528ddfd5b0500411cc",
+      "bytes": 11088,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8219691Z",
+      "observed_last_write_time_utc": "2026-09-01T14:24:52.1801691Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/job_manager.py",
+      "sha256": "30b02e526c77a8ee14a3a19f5ec4abb841d7a10796dce2d24fda7dd46ae31aef",
+      "bytes": 6810,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8229700Z",
+      "observed_last_write_time_utc": "2026-09-03T14:31:58.7006897Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/models.py",
+      "sha256": "911f9be9d751af4be2495c31673c9c979685daf0c29227b5b575b38f2822ac69",
+      "bytes": 1072,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8189710Z",
+      "observed_last_write_time_utc": "2026-09-01T13:25:12.2332940Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/request_archive.py",
+      "sha256": "58492e350515e2757460d03594697c27ae021f26dfbc80dd1477f24db0816b89",
+      "bytes": 1980,
+      "observed_creation_time_utc": "2026-09-04T12:20:02.3058507Z",
+      "observed_last_write_time_utc": "2026-09-04T12:20:02.3058507Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/request_fingerprint.py",
+      "sha256": "2e3734138e6f7ab7f0ba7106bbc2d11773bbaaee13c929f30fffcf497c7234f4",
+      "bytes": 1345,
+      "observed_creation_time_utc": "2026-09-03T14:26:17.5916078Z",
+      "observed_last_write_time_utc": "2026-09-03T14:26:17.5916078Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/review_manager.py",
+      "sha256": "0ef569ac01ad0c98e42479250a9b18369ec26178dfdddb13f99c34f1a68fa194",
+      "bytes": 14003,
+      "observed_creation_time_utc": "2026-09-04T12:22:19.7225440Z",
+      "observed_last_write_time_utc": "2026-09-04T14:32:36.8632493Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/service.py",
+      "sha256": "8ccbb2c11213ce9e68ad4e0a35d7fad61468237bd670da4e7805238ad1cd8f88",
+      "bytes": 16883,
+      "observed_creation_time_utc": "2026-09-01T13:21:51.9892315Z",
+      "observed_last_write_time_utc": "2026-09-04T12:20:02.3068504Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/storage.py",
+      "sha256": "bc9b3860da74290fe491e293c481cc68d5f5ba4cee1ff84629ca2e67ec15024b",
+      "bytes": 3989,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8189710Z",
+      "observed_last_write_time_utc": "2026-09-04T12:27:19.9181886Z"
+    },
+    {
+      "path": "legacy/V2B/coordinator/usage_manager.py",
+      "sha256": "4c2f6421b6b821edb96657c4c63356e79582226af0e882c9ab63f8241a1c0123",
+      "bytes": 2063,
+      "observed_creation_time_utc": "2026-09-01T13:19:37.8229700Z",
+      "observed_last_write_time_utc": "2026-09-01T14:02:13.4722173Z"
+    },
+    {
+      "path": "legacy/V2B/prompts/market_analysis_prompt.txt",
+      "sha256": "bc6ed0c37f4d97ab80a6e585172d1e0670bde1a974c350361b2f4e6ca7a484cb",
+      "bytes": 2634,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9959012Z",
+      "observed_last_write_time_utc": "2026-09-01T14:27:42.2528823Z"
+    },
+    {
+      "path": "legacy/V2B/providers/__init__.py",
+      "sha256": "3f60944371ba129ba94654967bf55d0df43922d12e07f2d171894be552427861",
+      "bytes": 1465,
+      "observed_creation_time_utc": "2026-09-01T13:21:51.9584772Z",
+      "observed_last_write_time_utc": "2026-09-01T14:43:01.8526806Z"
+    },
+    {
+      "path": "legacy/V2B/providers/base.py",
+      "sha256": "891d9ed555ede4dc34300e4610fba6cbba734fe3f93bf375a219f0c66a5d2866",
+      "bytes": 451,
+      "observed_creation_time_utc": "2026-09-01T13:21:51.9626250Z",
+      "observed_last_write_time_utc": "2026-09-01T13:21:51.9626250Z"
+    },
+    {
+      "path": "legacy/V2B/providers/deepseek_provider.py",
+      "sha256": "62dc7f3809c177283270e0e45edf1a5ce8133a9abf20bbce6850a9c91340b6e1",
+      "bytes": 17258,
+      "observed_creation_time_utc": "2026-09-01T14:43:01.8526806Z",
+      "observed_last_write_time_utc": "2026-09-03T13:15:49.1404538Z"
+    },
+    {
+      "path": "legacy/V2B/providers/openai_provider.py",
+      "sha256": "923ce0c8e073678097ccef53a6964cdbd2259d04d7fe3f95fcb5d62abd203e8b",
+      "bytes": 8482,
+      "observed_creation_time_utc": "2026-09-01T13:21:51.9626250Z",
+      "observed_last_write_time_utc": "2026-09-01T13:30:11.9640582Z"
+    },
+    {
+      "path": "legacy/V2B/pytest.ini",
+      "sha256": "ea71c312e6a2e7a9acd936459d6f37a750d3ef23de194640a05dd27273f14c4a",
+      "bytes": 96,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7617911Z",
+      "observed_last_write_time_utc": "2026-09-01T13:23:59.7627913Z"
+    },
+    {
+      "path": "legacy/V2B/README.md",
+      "sha256": "0cc30faf47b43e1681fbedf0b2b59c18bef2956cc6b27b9989b6baf1d6e1e658",
+      "bytes": 11423,
+      "observed_creation_time_utc": "2026-09-01T13:26:24.2782448Z",
+      "observed_last_write_time_utc": "2026-09-04T14:38:26.3777399Z"
+    },
+    {
+      "path": "legacy/V2B/requirements.txt",
+      "sha256": "da9f862d2086d77fde51c5aff38a17324fd6bdd9c52dd1f5e4529605a6b0380b",
+      "bytes": 119,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9943312Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9943312Z"
+    },
+    {
+      "path": "legacy/V2B/samples/simulated_checkpoint.json",
+      "sha256": "19ed2aed1823bd48bc6cdd7e6d30cc31df81a234718c352adad2dab563099aec",
+      "bytes": 609,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9971200Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9971200Z"
+    },
+    {
+      "path": "legacy/V2B/samples/simulated_event_no_observation.json",
+      "sha256": "c7752b1148a6ede7253c4931a113ce9c6b942c244504bf8d482648823e1e28a9",
+      "bytes": 2402,
+      "observed_creation_time_utc": "2026-09-01T14:25:49.6498241Z",
+      "observed_last_write_time_utc": "2026-09-01T14:25:49.6498241Z"
+    },
+    {
+      "path": "legacy/V2B/samples/simulated_event.json",
+      "sha256": "82286e6543d5521324da1ee9fdbb869e20b604093405a03db94bbc7578a10214",
+      "bytes": 4106,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9971200Z",
+      "observed_last_write_time_utc": "2026-09-01T14:25:13.4405347Z"
+    },
+    {
+      "path": "legacy/V2B/schemas/ack_receipt.schema.json",
+      "sha256": "53b44ba0ae63e37e838637241e6b52d962c196192bdddfeac4b38fc933ee6b39",
+      "bytes": 1581,
+      "observed_creation_time_utc": "2026-09-04T14:32:36.8622484Z",
+      "observed_last_write_time_utc": "2026-09-04T14:39:48.2684005Z"
+    },
+    {
+      "path": "legacy/V2B/schemas/decision.schema.json",
+      "sha256": "bb7577ddf55ddeb7907a8112ec61360526fba77a27a23078decb6dd369f1cfb2",
+      "bytes": 2131,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9959012Z",
+      "observed_last_write_time_utc": "2026-09-01T13:17:47.9959012Z"
+    },
+    {
+      "path": "legacy/V2B/schemas/event_handoff.schema.json",
+      "sha256": "f0e61a61396aa199d33178130920081709ed9e9e962d42a85a2143838a16336d",
+      "bytes": 3602,
+      "observed_creation_time_utc": "2026-09-01T13:17:47.9953355Z",
+      "observed_last_write_time_utc": "2026-09-01T14:24:05.0899355Z"
+    },
+    {
+      "path": "legacy/V2B/tests/__init__.py",
+      "sha256": "cec023aeab1a57de0dc02c1cbaaa46e4326bf44bcfda8aa32b40cdca866d6f28",
+      "bytes": 17,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7899942Z",
+      "observed_last_write_time_utc": "2026-09-01T13:23:59.7899942Z"
+    },
+    {
+      "path": "legacy/V2B/tests/conftest.py",
+      "sha256": "0b62563fc1eb59799d9d1bfdb1f1650f5c4464384351dfe15584ccc1ac77e91e",
+      "bytes": 1034,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7899942Z",
+      "observed_last_write_time_utc": "2026-09-04T14:32:36.8642485Z"
+    },
+    {
+      "path": "legacy/V2B/tests/fixtures/ack_receipt_valid.json",
+      "sha256": "f29164e96e7184e05fba965e4e7052e5c6dbfd4d9ac9707055272a72672ba0b9",
+      "bytes": 1217,
+      "observed_creation_time_utc": "2026-09-05T01:41:18.3225550Z",
+      "observed_last_write_time_utc": "2026-09-05T01:41:18.3225550Z"
+    },
+    {
+      "path": "legacy/V2B/tests/fixtures/ack_receipt.json",
+      "sha256": "f29164e96e7184e05fba965e4e7052e5c6dbfd4d9ac9707055272a72672ba0b9",
+      "bytes": 1217,
+      "observed_creation_time_utc": "2026-09-05T01:48:42.8409587Z",
+      "observed_last_write_time_utc": "2026-09-05T01:41:18.3225550Z"
+    },
+    {
+      "path": "legacy/V2B/tests/helpers.py",
+      "sha256": "eeecd4fc34f9e474bb15de5400e4c7043448187b73d3afe7b1f76c7923412825",
+      "bytes": 2457,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7909943Z",
+      "observed_last_write_time_utc": "2026-09-01T14:04:11.7039090Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_ack_consume_isolated.py",
+      "sha256": "cee6bf2635a7e72bc06f98e2ad55c1107ff73d29557315527e1092bd8f576e14",
+      "bytes": 6036,
+      "observed_creation_time_utc": "2026-09-05T01:41:18.3235562Z",
+      "observed_last_write_time_utc": "2026-09-05T01:41:18.3235562Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_ack_receipt.py",
+      "sha256": "65155beef7a4e62690c58e01343f7cf822d3bfe8e977223f6837146715a0935d",
+      "bytes": 19904,
+      "observed_creation_time_utc": "2026-09-04T14:36:15.5128843Z",
+      "observed_last_write_time_utc": "2026-09-04T14:39:48.2684005Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_action_policy.py",
+      "sha256": "adfe46d73e6230b81cf102d9c90c58ac7d6f0981b565a1cd186ca8bb644a0752",
+      "bytes": 8713,
+      "observed_creation_time_utc": "2026-09-03T14:05:24.2885595Z",
+      "observed_last_write_time_utc": "2026-09-03T14:05:24.2885595Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_config.py",
+      "sha256": "7d4466c11dcfaee25e161f33ab255cbfaff59bbf8294d13c2716529350a71402",
+      "bytes": 3027,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7909943Z",
+      "observed_last_write_time_utc": "2026-09-03T13:17:30.6747301Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_coordinator_flow.py",
+      "sha256": "48b5711788bccd8ec582039b65db42bb804ea51b32519dd32a8ecb55c7f6532f",
+      "bytes": 5109,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7929955Z",
+      "observed_last_write_time_utc": "2026-09-01T14:43:12.7657121Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_cursor_completeness.py",
+      "sha256": "47530b7f6961b64292de2da89b637c0883c6aa858c5ae01f6333108855fbe4c6",
+      "bytes": 7639,
+      "observed_creation_time_utc": "2026-09-01T14:27:15.4300216Z",
+      "observed_last_write_time_utc": "2026-09-01T14:27:15.4300216Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_decision_review.py",
+      "sha256": "e23535d4a6519630dae3f1d01f1b672fc1a1bff6e2feec4a6bd56b8a30f079c8",
+      "bytes": 14424,
+      "observed_creation_time_utc": "2026-09-04T12:27:03.9015879Z",
+      "observed_last_write_time_utc": "2026-09-04T12:28:54.3070938Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_decision_schema.py",
+      "sha256": "f0d10d898d6f1b1cac9355fc35de5f8c6226d0bde5eb708887de00502ecda5e2",
+      "bytes": 3515,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7919940Z",
+      "observed_last_write_time_utc": "2026-09-01T14:04:11.7039090Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_deepseek_integration.py",
+      "sha256": "30821d1b2184eefbb6bdcd5c440c47303fb4c56f433ea3f06169d99487af6bd6",
+      "bytes": 2789,
+      "observed_creation_time_utc": "2026-09-01T14:45:02.7599157Z",
+      "observed_last_write_time_utc": "2026-09-01T14:45:02.7750258Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_deepseek_provider.py",
+      "sha256": "24db2d4cf439c5c5e08dbc78cbc8ecd937ba244a3c84ab2afbc1b8021c7230c6",
+      "bytes": 24555,
+      "observed_creation_time_utc": "2026-09-01T14:44:38.7983068Z",
+      "observed_last_write_time_utc": "2026-09-03T13:17:30.6747301Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_event_handoff.py",
+      "sha256": "b5dc82627a6f9abb2d1a4cb54ca3e006c3a3cd57844ae7e56841254f2b8f310e",
+      "bytes": 1128,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7919940Z",
+      "observed_last_write_time_utc": "2026-09-01T14:26:30.1731361Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_openai_integration.py",
+      "sha256": "5805a1293b8f662aa0b39dcad93b73cd6f272224a11c76cde137571ad9dbc56a",
+      "bytes": 2283,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7940142Z",
+      "observed_last_write_time_utc": "2026-09-01T14:43:12.7657121Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_protocol_audit.py",
+      "sha256": "be9169c86a3e89b00f5ba782dffd694938355f7be4c1deba80b206131b6d1d10",
+      "bytes": 9632,
+      "observed_creation_time_utc": "2026-09-01T14:04:11.7177696Z",
+      "observed_last_write_time_utc": "2026-09-01T14:26:30.1731361Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_provider_interface.py",
+      "sha256": "18bda3bb99846356ed4fa4c03f3fb47a0b4072ab33b7892c6e87c7198b171f90",
+      "bytes": 3386,
+      "observed_creation_time_utc": "2026-09-01T13:23:59.7929955Z",
+      "observed_last_write_time_utc": "2026-09-01T13:27:37.5708920Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_reasoning_cli.py",
+      "sha256": "077ec851eab013e6a0cbf7fe28a203deb05b0fcd5abcec3fb401ce612c6c65cf",
+      "bytes": 3520,
+      "observed_creation_time_utc": "2026-09-03T13:17:30.6747301Z",
+      "observed_last_write_time_utc": "2026-09-03T13:17:54.0757860Z"
+    },
+    {
+      "path": "legacy/V2B/tests/test_request_idempotency.py",
+      "sha256": "4a23e754d7c16adc8d78289e01049b28eeb16dee24a62d5f8b93f4ee36f9a703",
+      "bytes": 13681,
+      "observed_creation_time_utc": "2026-09-03T14:28:51.7166397Z",
+      "observed_last_write_time_utc": "2026-09-03T14:32:38.7705856Z"
+    },
+    {
+      "path": "legacy/V2B/tests/tmp_ack_consume_state/README.md",
+      "sha256": "8903a82f3457c97a05624740b58c026965265e72490e72bb97bb967482a1c41a",
+      "bytes": 317,
+      "observed_creation_time_utc": "2026-09-05T01:41:18.3225550Z",
+      "observed_last_write_time_utc": "2026-09-05T01:41:18.3225550Z"
+    },
+    {
+      "path": "legacy/V2B/v2b_coordinator.py",
+      "sha256": "6a766e08dce9041b2f415afc9d0324208638d36111c84c603d7b4d88f9d0b580",
+      "bytes": 10210,
+      "observed_creation_time_utc": "2026-09-01T13:21:51.9892315Z",
+      "observed_last_write_time_utc": "2026-09-04T14:32:36.8642485Z"
+    }
+  ]
+}

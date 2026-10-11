@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "captured_at": "2026-09-05T06:05:48.2263652Z",
+  "finalized_on": "2026-09-05",
+  "file_count": 81,
+  "unchanged": true,
+  "frozen_baselines": "PASS",
+  "authoritative_checks": [
+    {
+      "version": "V2A.1.2.1",
+      "path": "legacy/V2A/量价查询_V2A.1.2.1_每日状态重置_放弃即删除(4).html",
+      "baseline_status": "FROZEN",
+      "expected": "5fb58532d16628694239459c059d42fa2c7d889622a9893983ba2671ff412df6",
+      "actual": "5fb58532d16628694239459c059d42fa2c7d889622a9893983ba2671ff412df6",
+      "status": "PASS"
+    },
+    {
+      "version": "V2A.1.2.2",
+      "path": "legacy/V2A/量价查询_V2A.1.2.2_Decision_ACK导入版.html",
+      "baseline_status": "FINAL_ACCEPTED_FROZEN",
+      "expected": "fd155f387747551a603b21ac0f54e7618ef3e47f95bf5ab0b2bc13043441f2ae",
+      "actual": "fd155f387747551a603b21ac0f54e7618ef3e47f95bf5ab0b2bc13043441f2ae",
+      "status": "PASS"
+    }
+  ],
+  "historical_references": [
+    {
+      "version": "V2A.1.2.2",
+      "source_path": "LOCAL_HISTORICAL_SOURCE/量价查询_V2A.1.2.2_Decision_ACK导入版_验收修补前备份_20260904.html",
+      "sha256": "c5921ca8a62490d4d8ec70e903b4ea983d1d185341743dad2189113e5dba72d2",
+      "status": "PRE_FIX_HISTORICAL_SNAPSHOT",
+      "included_in_final_legacy": false
+    }
+  ],
+  "changes": [],
+  "status": "READY"
+}

@@ -1,0 +1,4 @@
+# Preserve reviewed source bytes, including existing LF, CRLF and mixed endings.
+# Portable and frozen-reference locks hash exact bytes. Do not run renormalize.
+# Unset conversion attributes also prevent inherited LFS/ident/encoding filters.
+* -text -filter -ident -working-tree-encoding

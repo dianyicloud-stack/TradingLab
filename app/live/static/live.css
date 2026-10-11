@@ -1,0 +1,51 @@
+.advisory-card{margin:1rem 0;border-left:4px solid #4f8cff}.advisory-card>.toolbar h2{margin:.1rem 0}.live-health,.freshness{font-variant-numeric:tabular-nums}.freshness{padding:.25rem .55rem;border-radius:999px;background:#e8eef8}.freshness.fresh{background:#dff4e7;color:#176b3a}.freshness.delayed{background:#fff0c9;color:#805b00}.freshness.stale,.warning{background:#ffe1df;color:#982d27;padding:.45rem .65rem;border-radius:.4rem}.advisory-hero{display:grid;grid-template-columns:minmax(8rem,auto) auto 1fr;align-items:center;gap:.75rem;padding:.8rem 1rem;margin:.8rem 0;border-radius:.65rem;background:#eef4ff}.advisory-hero h3{font-size:1.65rem;margin:0}.advisory-hero p{margin:0;color:#59677a}.advisory-hero.severity-important,.advisory-hero.severity-critical{background:#fff0e8}.confidence-note{cursor:help;border-bottom:1px dotted currentColor}.meta-grid,.delta-grid,.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.25rem .9rem}.meta-grid p,.delta-grid p,.game-grid p{margin:.2rem 0}.dominance-strip{display:flex;align-items:baseline;gap:1rem;padding:.75rem 0;border-bottom:1px solid #d8deea}.dominance-strip h4{margin:0}.dominance-strip strong{font-size:1.2rem}.hypothesis-review{font-weight:600}.scenario-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.65rem}.scenario-card{padding:.65rem;border:1px solid #d8deea;border-radius:.55rem}.scenario-card h4,.scenario-card p{margin:.25rem 0}.advisory-timeline{margin-top:.8rem}.timeline-node{display:grid;grid-template-columns:9rem 1fr 1fr;gap:.5rem;padding:.6rem;border-left:2px solid #4f8cff}.timeline-node p{grid-column:2/-1;margin:0;color:#59677a}@media(max-width:760px){.advisory-hero{grid-template-columns:1fr}.dominance-strip{align-items:flex-start;flex-direction:column;gap:.3rem}.timeline-node{grid-template-columns:1fr}.timeline-node p{grid-column:auto}}
+.mode-tabs{display:flex;gap:.5rem;margin:.8rem 0}.mode-tabs button.active{background:#244d8d;color:#fff}.simulation-badge{display:inline-block;margin-right:.6rem;padding:.3rem .55rem;border-radius:.35rem;background:#7a3fc1;color:#fff;font-weight:700;letter-spacing:.06em}#simulation-clock{font-variant-numeric:tabular-nums;font-weight:700}#simulation-panel{border-left:4px solid #7a3fc1}
+.stock-summary{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem 1rem;padding:.7rem 0;font-variant-numeric:tabular-nums}.stock-summary button{width:auto}.stock-body{border-top:1px solid #dae2ed;padding-top:1rem}.stock-body[hidden]{display:none}.unread-badge{color:#315c91;background:#eef4fc;border-radius:.4rem;padding:.25rem .5rem}.opinion-cutoff{font-size:1.15rem;font-weight:700;color:#1f5488}.opinion-brief>h3{margin:.4rem 0}.opinion-brief p{margin:.6rem 0}.opinion-detail{margin:1rem 0}.reading-toolbar{margin:.8rem 0}.reading-toolbar button{width:auto}.new-market-data{color:#805b00}.advisory-card{overflow-wrap:anywhere;min-width:0}.advisory-card pre{white-space:pre-wrap;max-width:100%;overflow:auto}.stock-body .live-portfolio{margin:1rem 0}#reading-summary{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}@media(max-width:600px){.stock-summary{display:grid;grid-template-columns:1fr 1fr}.stock-summary>span{grid-column:1/-1}.advisory-card>.toolbar{flex-wrap:wrap}.advisory-card>.toolbar h2{font-size:18px}.stock-body .toolbar{flex-wrap:wrap;min-width:0}.stock-body select{max-width:100%}.meta-grid,.scenario-grid{grid-template-columns:1fr}}
+
+#observed-stocks{display:flex;gap:1rem;flex-wrap:wrap}#observed-stocks label{display:flex;gap:.4rem;align-items:center;padding:.6rem;background:#f1f5fb;border-radius:.5rem}.live-events p{margin:.35rem 0;padding:.35rem .6rem;border-left:2px solid #87aee5}.advisory-controls{margin:.8rem 0;padding:.6rem;background:#f6f8fc;border-radius:.6rem}.advisory-controls details label{display:inline-flex;margin:.35rem;gap:.25rem}.meta-grid{font-weight:600}.live-portfolio{background:#f7faf8;border-radius:.5rem;padding:.6rem}.live-portfolio h4{margin:.2rem 0}.advisory-card [hidden]{display:none!important}
+
+/* Live-specific density: preserve the shell and other workspaces. */
+main:has(#live-center){padding-top:20px}main:has(#live-center)>.eyebrow{display:none}main:has(#live-center)>.intro{margin:8px 0 12px}main:has(#live-center)>.cards:empty{display:none}
+#live-center{padding:16px}#live-center>.toolbar:first-child{display:none}#live-center .mode-tabs{flex-direction:row;gap:8px;margin:0 0 10px}#live-center .mode-tabs button{width:auto;min-width:120px;padding:8px 16px}#live-center #real-controls>p{margin:8px 0}#live-center #real-controls button{padding:7px 12px}#live-center #live-workspace{line-height:1.6}
+#live-center>.subpanel{padding:10px;margin:10px 0}#stock-filter h3{margin:10px 0}#observed-stocks label{flex-direction:row;flex:0 1 auto;font-size:13px;margin:0}#observed-stocks input{width:auto;margin:0}.advisory-card{padding:16px!important}.advisory-card>.toolbar{margin:0}.advisory-card>.toolbar h2{font-size:20px}.advisory-controls button{padding:8px 10px}.advisory-controls select{width:auto;min-width:115px}.advisory-controls{align-items:center;gap:8px}.advisory-controls>details{padding:5px;margin:0}.advisory-controls>label{flex-direction:row}.advisory-card>.live-health{margin:8px 0}.live-events{margin:10px 0}.live-events h4{margin:5px 0}.live-events>p{display:inline-block;margin:3px 6px 3px 0;padding:4px 8px;background:#f5f8fc}.live-portfolio p{margin:6px 0}
+
+/* Compact reading controls, without changing other module layouts. */
+#live-center .pin-stock,#live-center .mark-read{background:#f1f5f7;color:#4c6472;padding:4px 8px;font-size:12px;border:1px solid #dce3e9}.advisory-card{margin:10px 0;padding:12px!important}.advisory-card>.toolbar h2{font-size:18px}.stock-summary{font-size:13px;padding:6px 0;gap:5px 10px}.new-opinion-notice{background:#fff1ce!important;color:#805000!important}.stock-toggle:before{content:"▶ ";font-size:10px}.stock-toggle[aria-expanded=true]:before{content:"▼ "}.stock-body details{overflow-anchor:none}#live-center .reading-toolbar{margin:6px 0}
+
+.event-severity,.event-advised{display:inline-block;padding:2px 6px;margin-left:5px;border-radius:4px;font-size:12px}.event-info{color:#496278;background:#eaf0f5}.event-watch,.event-notice{color:#205c9b;background:#e6f0fc}.event-important{color:#855000;background:#fff1cf}.event-critical{color:#943b00;background:#ffdfbc;font-weight:700}.event-advised{color:#005a5a;background:#d6f5f5}
+.analysis-state{flex-basis:100%;grid-column:1/-1;min-width:0}.analysis-state p{margin:4px 0}.analysis-state .latest-success{font-weight:600}.analysis-failure{color:#855000;background:#fff5df;padding:6px 8px;border-radius:4px}
+
+/* Reading hierarchy: one conclusion, separate evidence, scoped to Live. */
+#live-center .opinion-section{padding:14px 16px;margin:0;border-top:1px solid #dbe3ed;line-height:1.8;min-width:0}
+#live-center .opinion-section>h4{margin:0 0 8px;color:#354b65;font-size:14px;letter-spacing:.04em}
+#live-center .opinion-section p{margin:6px 0;white-space:pre-line}
+#live-center .opinion-conclusion{border:1px solid #cddded;border-radius:8px;background:#f3f7fc;margin-bottom:12px}
+#live-center .judgment-summary{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+#live-center .judgment-action{font-size:23px;color:#234a78}
+#live-center .judgment-review{font-weight:700;padding:2px 8px;border:1px solid currentColor;border-radius:5px;font-size:13px}
+#live-center .opinion-lead{font-size:15px;color:#263d54}
+#live-center .opinion-comparison{background:#fafbfd}
+#live-center .opinion-risk{border-left:3px solid #c59550;background:#fffaf1;margin-top:8px}
+#live-center .change-up{color:#b42335;font-weight:700}
+#live-center .change-down{color:#137346;font-weight:700}
+#live-center .change-flat{color:#5e6d7e}
+#live-center .delta-grid{gap:8px 18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+#live-center .delta-grid p{padding:6px 0;border-bottom:1px dashed #dbe3ed}
+#live-center .time-badge{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:5px 8px;background:#eaf2fc;color:#244f7f;border:1px solid #d3e2f2;border-radius:5px;padding:4px 8px;margin:3px 6px 3px 0;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums;max-width:100%}
+#live-center .time-badge time{font-weight:700}
+#live-center .time-badge.opinion-cutoff{font-size:14px;background:#dceafb;border-color:#b8d0eb}
+#live-center .time-label{font-weight:400}
+#live-center .opinion-detail>summary{padding:10px 14px;background:#f0f4f8;color:#355471;border-radius:5px;cursor:pointer}
+#live-center .opinion-detail>.opinion-section{margin-top:10px}
+#live-center .focus-list li,#live-center .opinion-risk li{margin:8px 0;line-height:1.8}
+#live-center .focus-list span{display:block;color:#526477}
+#live-center .advisory-history,#live-center .advisory-timeline{margin:12px 0;border-top:1px solid #dbe3ed;padding-top:10px}
+#live-center .history-content{padding:8px 0}
+#live-center .history-opinion{padding:8px 0;border-bottom:1px solid #e3e9f0}
+#live-center .history-opinion>.opinion-brief{margin-top:10px}
+#live-center .history-empty,#live-center .empty-note{color:#647588;padding:6px 0}
+#live-center .history-error{color:#89520e;background:#fff5df;padding:8px}
+#live-center .history-refresh,#live-center .history-retry{width:auto;padding:6px 10px;font-size:12px}
+#live-center .sync-summary{color:#526b80;font-size:13px}
+#live-center .dominance-strip{border:0;font-weight:600}
+@media(max-width:600px){#live-center .opinion-section{padding:12px 10px}#live-center .delta-grid{grid-template-columns:1fr}#live-center .time-badge{font-size:12px}#live-center .time-badge.opinion-cutoff{font-size:13px}}

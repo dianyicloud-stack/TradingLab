@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.v2b/schemas/event_handoff.schema.json",
+  "title": "V2B Event Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "handoff_type", "handoff_id", "generated_at",
+    "tracking_session_id", "symbol", "name", "session_date",
+    "decision_checkpoint", "trigger_event", "composite_event", "events_since_checkpoint",
+    "observation_rows_since_checkpoint", "runtime_context", "current_state",
+    "cursor_snapshot", "metadata"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "handoff_type": { "const": "EVENT_INTERRUPT" },
+    "handoff_id": { "type": "string", "pattern": "^EHO-[0-9]{8}-[0-9]{6}-[A-Z0-9]{4}$" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "tracking_session_id": { "type": "string", "minLength": 1 },
+    "symbol": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "session_date": { "type": "string", "format": "date" },
+    "decision_checkpoint": { "type": ["object", "null"] },
+    "trigger_event": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["event_id", "event_seq", "timestamp", "type", "label", "severity"],
+      "properties": {
+        "event_id": { "type": "string", "minLength": 1 },
+        "event_seq": { "type": "integer", "minimum": 1 },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "type": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "severity": { "enum": ["INFO", "WATCH", "IMPORTANT", "CRITICAL"] }
+      }
+    },
+    "composite_event": { "type": ["object", "null"] },
+    "events_since_checkpoint": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["event_id", "event_seq", "timestamp", "type", "severity", "evidence"],
+        "properties": {
+          "event_id": { "type": "string", "minLength": 1 },
+          "event_seq": { "type": "integer", "minimum": 1 },
+          "timestamp": { "type": "string", "format": "date-time" },
+          "type": { "type": "string", "minLength": 1 },
+          "label": { "type": "string" },
+          "severity": { "enum": ["INFO", "WATCH", "IMPORTANT", "CRITICAL"] },
+          "evidence": { "type": "object" }
+        }
+      }
+    },
+    "observation_rows_since_checkpoint": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["requested_time"],
+        "properties": {
+          "requested_time": { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }
+        }
+      }
+    },
+    "runtime_context": { "type": "object" },
+    "current_state": { "type": "object" },
+    "cursor_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "last_processed_event_seq", "last_processed_observation_time",
+        "handoff_max_event_seq", "handoff_max_observation_time"
+      ],
+      "properties": {
+        "last_processed_event_seq": { "type": ["integer", "null"], "minimum": 0 },
+        "last_processed_observation_time": {
+          "oneOf": [{ "type": "null" }, { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }]
+        },
+        "handoff_max_event_seq": { "type": ["integer", "null"], "minimum": 0 },
+        "handoff_max_observation_time": {
+          "oneOf": [{ "type": "null" }, { "type": "string", "pattern": "^[0-2][0-9]:[0-5][0-9]$" }]
+        }
+      }
+    },
+    "metadata": { "type": "object" }
+  }
+}

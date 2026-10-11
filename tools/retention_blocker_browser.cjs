@@ -1,0 +1,12 @@
+const fs=require('fs'),path=require('path'),{chromium}=require(path.resolve(path.dirname(process.execPath),'../node_modules/playwright'));const [base,out]=process.argv.slice(2);
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'}),page=await browser.newPage();const r={checks:[],pageerror:[],console_error:[],get_ms:[]};
+page.on('pageerror',e=>r.pageerror.push(e.message));page.on('console',e=>{if(e.type()==='error')r.console_error.push(e.text())});
+await page.route('**/*',q=>{const u=new URL(q.request().url());if(u.origin===base)return q.continue();if(u.hostname.endsWith('.kaspersky-labs.com'))return q.fulfill({status:200,body:'/* isolated test */',contentType:'text/javascript'});return q.abort()});
+const check=(v,m)=>{if(!v)throw Error(m);r.checks.push(m)},get=async p=>await(await page.request.get(base+p)).json();
+try{await page.goto(base+'/system');await page.waitForFunction(()=>document.getElementById('maintenance-summary').textContent.includes('策略未启用，本次未删除数据'));
+r.text=await page.locator('#maintenance-summary').innerText();for(const word of ['已统计部分','目录不可访问','指标维护基准尚未完成验证','快照：未创建','范围外'])check(r.text.includes(word),word);
+check(await page.locator('#maintenance-apply').isDisabled(),'disabled cleanup');const before=await get('/test/evidence');
+for(let i=0;i<15;i++){const t=performance.now();await get('/api/system/maintenance');r.get_ms.push(performance.now()-t);}await page.waitForTimeout(5500);
+const after=await get('/test/evidence');check(after.reads===before.reads,'GET/polling no owner scan or write');check(after.provider_calls===0&&!after.enabled,'provider zero policy disabled');
+await page.screenshot({path:path.join(out,'system.png'),fullPage:true});check(!r.pageerror.length&&!r.console_error.length,'pageerror=0 console.error=0');r.status='PASS';
+}catch(e){r.status='FAIL';r.failure=e.stack}finally{fs.writeFileSync(path.join(out,'result.json'),JSON.stringify(r,null,2));console.log(JSON.stringify(r));await browser.close();process.exitCode=r.status==='PASS'?0:1;}})();

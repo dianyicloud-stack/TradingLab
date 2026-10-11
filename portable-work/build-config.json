@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "version": "step04-fix-20261011.1",
+  "profile": "TEST",
+  "web_port": 28765,
+  "agent_port": 28766,
+  "deployment_files": [
+    "portable-work/portable_control.py",
+    "portable-work/portable_test_control.py",
+    "portable-work/portable_test_child.py",
+    "portable-work/portable_bootstrap.ps1",
+    "portable-work/migration.py",
+    "portable-work/create_dev.py",
+    "portable-work/PORTABLE_README.txt"
+  ]
+}

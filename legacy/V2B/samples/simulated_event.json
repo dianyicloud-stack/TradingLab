@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "tracking_session_id": "TS-20260901-bj920161-01",
+  "symbol": "bj920161",
+  "name": "北交所测试样本",
+  "session_date": "2026-09-01",
+  "decision_checkpoint": {
+    "schema_version": "1.0",
+    "analyzed_at": "2026-09-01T10:05:00+08:00",
+    "covered_handoff_id": "SIMULATED-PRIOR-HANDOFF",
+    "market_state": "震荡偏弱",
+    "structure_state": "价格位于VWAP下方，买方接受尚未形成",
+    "action": "WATCH",
+    "processed_through_seq": 15,
+    "processed_through_observation_time": "10:05"
+  },
+  "trigger_event": {
+    "event_id": "E-20260901-TS-20260901-bj920161-01-0017",
+    "event_seq": 17,
+    "timestamp": "2026-09-01T10:15:00+08:00",
+    "detected_at": "2026-09-01T10:15:03+08:00",
+    "type": "ALPHA_DETERIORATE",
+    "label": "Alpha快速恶化",
+    "severity": "IMPORTANT",
+    "source": "simulated_v2b_event",
+    "price": 24.82,
+    "evidence": {
+      "alpha": -1.26,
+      "alpha_change_5m": -0.74,
+      "industry_breadth": 0.68,
+      "price_efficiency": -0.42
+    }
+  },
+  "composite_event": {
+    "composite_id": "CE-SIM-001",
+    "severity": "IMPORTANT",
+    "labels": ["Alpha快速恶化", "VWAP下方放量"],
+    "source_event_ids": ["E-20260901-TS-20260901-bj920161-01-0016", "E-20260901-TS-20260901-bj920161-01-0017"],
+    "member_event_ids": ["E-20260901-TS-20260901-bj920161-01-0016", "E-20260901-TS-20260901-bj920161-01-0017"]
+  },
+  "events_since_checkpoint": [
+    {
+      "event_id": "E-20260901-TS-20260901-bj920161-01-0016",
+      "event_seq": 16,
+      "timestamp": "2026-09-01T10:10:00+08:00",
+      "type": "VWAP_BELOW_VOLUME",
+      "label": "VWAP下方放量",
+      "severity": "WATCH",
+      "actionability": "LIVE",
+      "evidence": {
+        "price": 24.94,
+        "vwap": 24.95,
+        "same_period_volume_ratio": 1.42
+      }
+    },
+    {
+      "event_id": "E-20260901-TS-20260901-bj920161-01-0017",
+      "event_seq": 17,
+      "timestamp": "2026-09-01T10:15:00+08:00",
+      "type": "ALPHA_DETERIORATE",
+      "label": "Alpha快速恶化",
+      "severity": "IMPORTANT",
+      "actionability": "LIVE",
+      "evidence": {
+        "alpha": -1.26,
+        "alpha_change_5m": -0.74,
+        "industry_breadth": 0.68,
+        "price_efficiency": -0.42
+      }
+    }
+  ],
+  "observation_rows_since_checkpoint": [
+    {
+      "requested_time": "10:10",
+      "price": 24.94,
+      "delta_turnover": 0.29,
+      "delta_amount": 7300000,
+      "vwap": 24.95,
+      "same_period_volume_ratio": 1.42,
+      "alpha": -0.61,
+      "industry_breadth": 0.59,
+      "price_efficiency": -0.27
+    },
+    {
+      "requested_time": "10:15",
+      "price": 24.82,
+      "delta_turnover": 0.37,
+      "delta_amount": 9400000,
+      "vwap": 24.93,
+      "same_period_volume_ratio": 1.76,
+      "alpha": -1.26,
+      "industry_breadth": 0.68,
+      "price_efficiency": -0.42
+    }
+  ],
+  "runtime_context": {
+    "window_seconds": 120,
+    "data_status": "fresh",
+    "trade_source": "模拟新浪实时累计成交",
+    "samples": [
+      { "timestamp": "2026-09-01T10:13:00+08:00", "price": 24.91, "alpha": -0.72, "cumulative_turnover": 3.11 },
+      { "timestamp": "2026-09-01T10:14:00+08:00", "price": 24.87, "alpha": -0.98, "cumulative_turnover": 3.19 },
+      { "timestamp": "2026-09-01T10:15:00+08:00", "price": 24.82, "alpha": -1.26, "cumulative_turnover": 3.28 }
+    ]
+  },
+  "current_state": {
+    "price": 24.82,
+    "stock_pct": -1.43,
+    "industry_pct": -0.17,
+    "alpha": -1.26,
+    "vwap": 24.93,
+    "price_vwap_pct": -0.44,
+    "cumulative_volume": 3728000,
+    "cumulative_amount": 93470000,
+    "cumulative_turnover": 3.28,
+    "industry_breadth": 0.68,
+    "key_levels": {
+      "support": 24.6,
+      "reference": 24.95,
+      "resistance": 25.2
+    }
+  },
+  "cursor_snapshot": {
+    "last_processed_event_seq": 15,
+    "last_processed_observation_time": "10:05",
+    "handoff_max_event_seq": 17,
+    "handoff_max_observation_time": "10:15"
+  },
+  "metadata": {
+    "simulation": true,
+    "source": "samples/simulated_event.json",
+    "purpose": "V2B A+B isolated coordinator verification"
+  }
+}

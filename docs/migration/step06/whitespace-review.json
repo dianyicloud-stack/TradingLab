@@ -1,0 +1,171 @@
+{
+  "command": "git diff --cached --check",
+  "exit_code": 2,
+  "files": 14,
+  "findings": [
+    {
+      "path": "app/live/static/live.js",
+      "line": 134,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/DATA_LIFECYCLE_20260921.md",
+      "line": 195,
+      "kind": "new blank line at EOF",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/LIVE_READABILITY_20260921.md",
+      "line": 67,
+      "kind": "new blank line at EOF",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/M2_2_1_LIVE_PRODUCTIZATION.md",
+      "line": 97,
+      "kind": "new blank line at EOF",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/M2_RUNTIME_READ_CLOSURE.md",
+      "line": 97,
+      "kind": "new blank line at EOF",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/UI_STABILITY.md",
+      "line": 41,
+      "kind": "new blank line at EOF",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step02/runtime-platform-utf8.patch",
+      "line": 4,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 4,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 5,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 6,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 7,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 8,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 9,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 10,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03-fix/fixture-change.patch",
+      "line": 11,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03/tool-path-changes.patch",
+      "line": 82,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03/tool-path-changes.patch",
+      "line": 148,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step03/tool-path-changes.patch",
+      "line": 229,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step04-fix/code-changes-redacted.patch",
+      "line": 11,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step04-fix/code-changes-redacted.patch",
+      "line": 38,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step04-fix/code-changes-redacted.patch",
+      "line": 59,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step04-fix/code-changes-redacted.patch",
+      "line": 143,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step04-fix/code-changes-redacted.patch",
+      "line": 153,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "docs/migration/step04/code-changes.patch",
+      "line": 243,
+      "kind": "trailing whitespace",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "portable-work/node-LICENSE.txt",
+      "line": 362,
+      "kind": "space before tab in indent",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "tests/account_fixture.py",
+      "line": 14,
+      "kind": "new blank line at EOF",
+      "unchanged_from_step05": true
+    },
+    {
+      "path": "tools/market_agent_snapshot.py",
+      "line": 62,
+      "kind": "new blank line at EOF",
+      "unchanged_from_step05": true
+    }
+  ],
+  "new_management_file_findings": 0,
+  "gate": "ACCEPTED by explicit user decision, only these 27 preexisting findings; exit 2 retained and no rules disabled"
+}

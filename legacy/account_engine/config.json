@@ -1,0 +1,71 @@
+{
+  "config_version": 1,
+  "initial_cash": "200000.00",
+  "timezone": "Asia/Shanghai",
+  "price_tick": "0.01",
+  "fees": {
+    "commission_rate": "0.0003",
+    "minimum_commission": "5.00",
+    "stamp_duty_sell_rate": "0.0005",
+    "transfer_fee_rate": "0.00001",
+    "transfer_fee_apply": "both",
+    "slippage_rate": "0"
+  },
+  "execution_policies": {
+    "sell_shortfall": "reject",
+    "target_weight_cash_shortfall": "cap_to_affordable",
+    "strict_action_semantics": true,
+    "require_end_day_before_new_day": true
+  },
+  "market_rules": {
+    "SSE": {
+      "min_buy_qty": 100,
+      "buy_step_qty": 100,
+      "min_sell_qty": 100,
+      "sell_step_qty": 100,
+      "allow_sell_all_odd_lot": true
+    },
+    "SZSE": {
+      "min_buy_qty": 100,
+      "buy_step_qty": 100,
+      "min_sell_qty": 100,
+      "sell_step_qty": 100,
+      "allow_sell_all_odd_lot": true
+    },
+    "CHINEXT": {
+      "min_buy_qty": 100,
+      "buy_step_qty": 100,
+      "min_sell_qty": 100,
+      "sell_step_qty": 100,
+      "allow_sell_all_odd_lot": true
+    },
+    "STAR": {
+      "min_buy_qty": 200,
+      "buy_step_qty": 1,
+      "min_sell_qty": 200,
+      "sell_step_qty": 1,
+      "allow_sell_all_odd_lot": true
+    },
+    "BSE": {
+      "min_buy_qty": 100,
+      "buy_step_qty": 1,
+      "min_sell_qty": 100,
+      "sell_step_qty": 1,
+      "allow_sell_all_odd_lot": true
+    }
+  },
+  "symbol_market_overrides": {},
+  "symbol_market_patterns": [
+    {"pattern": "^92[0-9]{4}$", "market": "BSE"},
+    {"pattern": "^[48][0-9]{5}$", "market": "BSE"},
+    {"pattern": "^68[89][0-9]{3}$", "market": "STAR"},
+    {"pattern": "^30[01][0-9]{3}$", "market": "CHINEXT"},
+    {"pattern": "^6[0-9]{5}$", "market": "SSE"},
+    {"pattern": "^[012][0-9]{5}$", "market": "SZSE"}
+  ],
+  "trading_calendar": {
+    "mode": "weekday_with_holidays",
+    "holidays": [],
+    "extra_trading_days": []
+  }
+}

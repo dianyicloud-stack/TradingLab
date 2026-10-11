@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Trading Lab History Bars v1",
+  "$defs": {
+    "period": {"enum": ["DAY", "WEEK", "MONTH"]},
+    "request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["symbol", "end_date"],
+      "properties": {
+        "symbol": {"type": "string", "pattern": "^(sh|sz|bj)[0-9]{6}$"},
+        "end_date": {"type": "string", "format": "date"},
+        "period": {"$ref": "#/$defs/period", "default": "DAY"},
+        "volume_period": {"$ref": "#/$defs/period", "default": "DAY"},
+        "adjustment": {"const": "NONE", "default": "NONE"},
+        "limit": {"type": "integer", "minimum": 1, "maximum": 500, "default": 31},
+        "samples": {"enum": [10, 20, 30, 60], "default": 20}
+      }
+    },
+    "bar": {
+      "type": "object",
+      "required": ["date", "open", "high", "low", "close", "volume", "amount", "complete", "source", "available_at", "members", "constituent_count"],
+      "properties": {
+        "date": {"type": "string", "format": "date"},
+        "open": {"type": "number", "exclusiveMinimum": 0},
+        "high": {"type": "number", "exclusiveMinimum": 0},
+        "low": {"type": "number", "exclusiveMinimum": 0},
+        "close": {"type": "number", "exclusiveMinimum": 0},
+        "volume": {"type": "number", "minimum": 0, "description": "股"},
+        "amount": {"type": ["number", "null"], "description": "元；未知为 null"},
+        "complete": {"type": "boolean"},
+        "source": {"type": "string"},
+        "available_at": {"type": ["string", "null"], "format": "date-time"},
+        "members": {"type": "array", "items": {"type": "object", "required": ["date", "volume", "complete"]}},
+        "constituent_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "response": {
+      "type": "object",
+      "required": ["symbol", "exchange", "period", "timezone", "adjustment", "source", "requested_end_date", "actual_end_date", "coverage_start", "coverage_end", "bars", "data_version", "fingerprint", "quality", "volume_context"],
+      "properties": {
+        "symbol": {"type": "string"}, "exchange": {"enum": ["SH", "SZ", "BJ"]},
+        "period": {"$ref": "#/$defs/period"}, "timezone": {"const": "Asia/Shanghai"},
+        "adjustment": {"const": "NONE"}, "source": {"type": "string"},
+        "bars": {"type": "array", "maxItems": 500, "items": {"$ref": "#/$defs/bar"}},
+        "data_version": {"type": "string"}, "fingerprint": {"type": "string"},
+        "quality": {"type": "object"}, "volume_context": {"type": "object"}
+      }
+    }
+  },
+  "$ref": "#/$defs/response"
+}

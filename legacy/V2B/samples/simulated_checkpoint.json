@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "analyzed_at": "2026-09-01T10:05:00+08:00",
+  "covered_handoff_id": "SIMULATED-PRIOR-HANDOFF",
+  "market_state": "震荡偏弱",
+  "structure_state": "价格位于VWAP下方，买方接受尚未形成",
+  "action": "WATCH",
+  "key_levels": {
+    "support": 24.6,
+    "reference": 24.95,
+    "resistance": 25.2
+  },
+  "invalidation": "重新站稳25.20且Alpha与行业宽度同步恢复",
+  "reason_summary": [
+    "前一观察阶段Alpha弱于行业",
+    "VWAP下方成交接受度偏弱"
+  ],
+  "processed_through_seq": 15,
+  "processed_through_observation_time": "10:05"
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version", "receipt_type", "receipt_id", "generated_at", "ack_id",
+    "decision_id", "handoff_id", "tracking_session_id", "symbol", "applied_event_seq",
+    "applied_observation_time", "status", "source", "ack_payload"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "receipt_type": {"const": "ACK_APPLIED"},
+    "receipt_id": {"$ref": "#/$defs/id"},
+    "generated_at": {"type": "string", "format": "date-time", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"},
+    "ack_id": {"$ref": "#/$defs/id"},
+    "decision_id": {"$ref": "#/$defs/id"},
+    "handoff_id": {"$ref": "#/$defs/id"},
+    "tracking_session_id": {"type": "string", "pattern": "^TS-[0-9]{8}-(sh|sz|bj)[0-9]{6}-[0-9]{2,}$"},
+    "symbol": {"type": "string", "pattern": "^(sh|sz|bj)[0-9]{6}$"},
+    "applied_event_seq": {"$ref": "#/$defs/seq"},
+    "applied_observation_time": {"$ref": "#/$defs/time"},
+    "previous_event_seq": {"$ref": "#/$defs/seq"},
+    "previous_observation_time": {"$ref": "#/$defs/time"},
+    "status": {"const": "APPLIED"},
+    "source": {"const": "V2A"},
+    "ack_payload": {"type": "object"}
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$"},
+    "seq": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+    "time": {"type": ["string", "null"], "maxLength": 5, "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"}
+  }
+}
