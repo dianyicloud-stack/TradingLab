@@ -1,8 +1,8 @@
-> CURRENT · STEP07-FIX 发布候选。原文中的 STEP06/07 提交与验收是历史来源，非本候选祖先或当前测试结论。最新适用状态见 `docs/HANDOFF_CURRENT.md`；原始现场证据仅本地保存。
+> CURRENT · 2026-10-12 · STEP08A 已完成并通过用户审核；当前工程已采用独立干净 Git 历史。干净根基线为 `fb2002b24be524441a8d02d03ee8fa50d4298fcb`，本轮仅授权其直接子文档提交及本地审计。STEP08B 上传和 STEP08C 异机验收尚未完成，禁止自行执行。旧 STEP06/07 Commit 仅为历史来源，不是当前祖先；旧敏感历史和原始现场证据只在本地归档保留，禁止复制对象、合并或上传。
 
 # TradingLab 开发、审核与交接规则
 
-CURRENT · 2026-10-11 · 来源：[项目基线](docs/PROJECT_BASELINE.md)、[当前交接](docs/HANDOFF_CURRENT.md)、用户 STEP05 规则与 STEP06 本地 Git 授权。
+CURRENT · 2026-10-12 · 来源：[项目基线](docs/PROJECT_BASELINE.md)、[当前交接](docs/HANDOFF_CURRENT.md)、用户 STEP05 规则、STEP08A 审核与 STEP08B-1 本地文档提交授权。
 
 ## 开工与写入边界（CURRENT）
 
@@ -39,6 +39,14 @@ CURRENT · 2026-10-11 · 来源：[项目基线](docs/PROJECT_BASELINE.md)、[�
 
 在 `docs/handoffs/` 新增独立报告，使用 [模板](docs/handoffs/TEMPLATE.md)，并更新 HANDOFF_CURRENT。记录目标、实际变更文件、原因、测试与证据、遗留问题/节点、Portable 兼容性、数据/依赖变更、实际存在的分支/Commit、下一 PC 建议和审核状态。不得覆盖上一轮报告或自行宣布用户验收。
 
-仅文档任务也须校验引用、内容一致性、锁、敏感信息和保护目录；是否重跑业务测试必须诚实说明。STEP06 已明确授权本地初始化和首次提交；当前未上传 GitHub，不自动进入 STEP07/08。旧 STEP05 的 Git 禁令只描述该历史阶段。
+仅文档任务也须校验引用、内容一致性、锁、敏感信息和保护目录；是否重跑业务测试必须诚实说明。STEP08B-1 仅允许白名单本地文档提交，父提交必须是已审核干净基线，不得 amend/rebase 或引入旧历史。当前尚未上传，不创建远程、不执行Push；STEP08B-2/STEP08C须另行审核授权。旧 STEP05/06 阶段的禁令或授权不替代当前边界。
 
-Git 字节策略见 [GIT_BYTE_POLICY](docs/GIT_BYTE_POLICY.md)：`.gitattributes` 保留原字节，不执行批量 renormalize。锁定文件须同时核验工作文件与 Git Blob；不得为 Git 转换修改源码锁。首次提交的27处既有空白仅获本次限项接受，不适用于新改动。
+Git 字节策略见 [GIT_BYTE_POLICY](docs/GIT_BYTE_POLICY.md)：`.gitattributes` 保留原字节，不执行批量 renormalize。锁定文件须同时核验工作文件与 Git Blob；不得为 Git 转换修改源码锁。历史STEP06首次提交的27处既有空白仅获当时限项接受，不适用于本轮或后续新改动。
+
+## 当前发布与异机边界（CURRENT）
+
+- 当前仍为2026-09-26单体Web业务基线，Live、数据观察、Account、System四模块；Node行情Worker与Python AI Worker分离。文档提交不建立新的业务基线或改变源码锁。
+- 用户仅接受当前PC外部Kaspersky响应注入对GitHub Private纯源码迁移的限定风险；原严格console.error=0仍FAIL，不得隐藏错误。PC-B负责人须在异机验收结束前，使用锁定Playwright/Chromium、干净Profile和TEST/Fake完成独立页面/交互/重启复测。
+- Runtime ZIP独立分发，不进普通Git；现有制品已锁定，本轮尚未发布远程附件。拟由未来Private仓库的独立Release附件提供，仓库Owner确认访问权限、固定版本/Hash及保留责任后单独发布；Setup目前只读取本地制品，不自动认证下载。
+- 原工程归档为同盘回滚资料，不具备独立磁盘灾备能力；归档只读，禁止与新历史合并，禁止mirror/all refs上传。未来仅对获准的main明确上传，不包含Codex内部快照引用。
+- 最新流程与Runtime Hash见[当前交接](docs/HANDOFF_CURRENT.md)及[STEP08B-1交接](docs/handoffs/20261012_STEP08B_1.md)。版本使用实际Git HEAD，不能将旧476文件数或历史测试结果视为后续提交的当前计数/结果。

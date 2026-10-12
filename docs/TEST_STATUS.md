@@ -1,3 +1,34 @@
+# STEP08B-1 测试与审计适用范围
+
+CURRENT · 2026-10-12 · STEP08A已完成并通过审核。业务基线仍为2026-09-26单体Web；干净根Commit `fb2002b24be524441a8d02d03ee8fa50d4298fcb`，当前版本为基于它的文档提交，完整HEAD/文件数/清单SHA以本地最终审计和实际Git为准。
+
+本轮只更新知识文档，未改变业务、Provider、依赖、Legacy、235/11源码锁或测试断言。对实际暂存Blob及提交后全历史/跟踪文件做安全和字节检查，并在新工程固定环境运行Check-Dev；具体实测结果、退出码和命令在`.dev/step08b-1/`最终报告，不预填未运行结论。交接见[STEP08B-1](handoffs/20261012_STEP08B_1.md)。
+
+HISTORICAL / 已审核：STEP08A的新根环境恢复、启停、TEST通信和原归档保护PASS。旧476文件数只描述干净根基线；新增文档后必须重新统计。STEP07/STEP07-FIX的431/418PASS/13SKIPPED为历史结果，本轮完整431回归、Portable重建、真实浏览器E2E、PC-B和生产模式均NOT_TESTED。
+
+原严格浏览器console.error=0继续FAIL；用户仅接受Private纯源码迁移范围，不意味着UI质量门槛已通过。PC-B负责人最迟异机验收结束前使用锁定Playwright/Chromium、干净Profile和TEST/Fake复测页面/交互/重启，原始错误不隐藏。原13 SKIPPED条件和未知进程保护不变。
+
+Runtime当前仅本地保有，计划Private Release独立附件，尚未发布，不宣称Setup可自动从GitHub恢复。STEP08B-2上传、STEP08C异机验收均未完成。
+
+---
+
+## HISTORICAL：以下为STEP08A及旧测试状态原文
+
+以下CURRENT标记保留其原报告语境，不代表STEP08B-1当前实测。
+
+# STEP08A 当前实测补充
+
+CURRENT · 2026-10-11 · 版本 `fb2002b24be524441a8d02d03ee8fa50d4298fcb`。本轮同盘切换、新根Runtime恢复及DEV生命周期已实际通过；详见[STEP08A独立交接](handoffs/20261011_STEP08A_SWITCHED.md)。以下STEP07旧报告与旧Commit均为历史来源，不属于当前干净Git祖先。
+
+- PASS：476文件/534对象逐项核验，235业务及11构建输入、81冻结文件及两份权威指纹不变。
+- PASS：Setup-Dev、Check-Dev、Start-Dev、Stop-Dev退出均0；Python3.12.14、Node24.19.0、25依赖及Runtime全量校验；TEST Web/Agent/固定Node Worker合成命令通信、四页HTTP、正常停止和端口释放。
+- PASS：旧归档129351文件SHA与元数据核验；四类外部保护根元数据与准备阶段一致。
+- NOT_TESTED（本轮）：431全回归、Portable重建、真实浏览器E2E、PC-B、生产模式、真实AI/Telegram、USER高级强停全矩阵。原13 SKIPPED不改，未知进程保护不放宽。
+- 原严格浏览器console.error=0仍FAIL；用户仅接受GitHub Private纯源码迁移的限定风险，PC-B独立复验由目标PC操作者最迟异机验收结束前完成。
+- 执行原始日志与记录位于被Git忽略的 `.dev/step08a/`，不得提交本机控制token/数据/现场路径。交接文档待审核，未自动提交或上传。
+
+---
+
 > CURRENT · STEP07-FIX 发布候选。原文中的 STEP06/07 提交与验收是历史来源，非本候选祖先或当前测试结论。最新适用状态见 `HANDOFF_CURRENT.md`；原始现场证据仅本地保存。
 
 # 测试基线与适用限制
