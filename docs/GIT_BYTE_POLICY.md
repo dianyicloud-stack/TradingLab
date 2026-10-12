@@ -2,7 +2,7 @@
 
 # Git 原字节与 Portable 锁策略
 
-CURRENT · STEP06 · 2026-10-11。首次本地基线为 `6d655308096abc69cc3f3cb8d8df855cc170b45d`，分支 main，未上传 GitHub。证据见 [STEP06报告](../STEP06_TradingLab本地Git初始化及安全审计报告.md)。
+CURRENT · STEP06 · 2026-10-11。首次本地基线为 `6d655308096abc69cc3f3cb8d8df855cc170b45d`，分支 main，未上传 GitHub。证据见 [STEP06报告（历史版本，本地保留）](https://github.com/dianyicloud-stack/TradingLab/blob/7b61c5c3c443d1a6889440efdf3a640d53e376b2/STEP06_TradingLab%E6%9C%AC%E5%9C%B0Git%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A.md)。
 
 ## 原字节规则
 

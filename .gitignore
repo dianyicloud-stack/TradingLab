@@ -88,3 +88,6 @@ tests/*-drill-*/
 /docs/migration/step04/a3-runtime.json
 /docs/migration/step04/b3-runtime.json
 /docs/migration/step04/post-test-integrity.json
+
+# Root migration step reports stay local; knowledge docs and handoffs remain tracked.
+/STEP[0-9][0-9]*.md

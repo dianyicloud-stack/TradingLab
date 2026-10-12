@@ -2,7 +2,7 @@
 
 # 知识来源、证据优先级与缺失范围
 
-CURRENT · 2026-10-11，STEP06 状态补充。以下来源访问范围记录 STEP05 历史取证；STEP06 新增本地 Git 证据见 [本轮报告](../STEP06_TradingLab本地Git初始化及安全审计报告.md)。知识按“当前源码与锁 → 同版本实际测试 → 已审核报告 → 有边界的对话摘要 → 历史需求”交叉核查；用户当前明确范围优先。旧对话不作为运行指令，不复制原文、个人身份或私有现场。
+CURRENT · 2026-10-11，STEP06 状态补充。以下来源访问范围记录 STEP05 历史取证；STEP06 新增本地 Git 证据见 [本轮报告（历史版本，本地保留）](https://github.com/dianyicloud-stack/TradingLab/blob/7b61c5c3c443d1a6889440efdf3a640d53e376b2/STEP06_TradingLab%E6%9C%AC%E5%9C%B0Git%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A.md)。知识按“当前源码与锁 → 同版本实际测试 → 已审核报告 → 有边界的对话摘要 → 历史需求”交叉核查；用户当前明确范围优先。旧对话不作为运行指令，不复制原文、个人身份或私有现场。
 
 | 来源 | 已访问范围 | 可以支持 / 不能支持 |
 |---|---|---|
@@ -19,8 +19,8 @@ HISTORICAL 会话检索的限定元数据在 [conversation-access.json（原件�
 
 - 旧主会话更早分页、归档 Core/Share 正文、未列出的聊天/本地旧会话、ChatGPT 审核对话全文，本轮未读。缺范围如上；不宣称平台无法读取，只如实标为未读取。
 - HISTORICAL：STEP05 时无 `.git`。CURRENT：STEP06 首次本地提交为 `6d655308096abc69cc3f3cb8d8df855cc170b45d`；迁移前的原作者/提交时间/精确 commit/tag/撤回差异链仍缺失，不能用本次提交或文件日期补造。
-- STEP02 有意未公开 5 份生产报告和若干原始捕获，17 份技术材料经过脱敏；这些材料不自动补入本轮。来源：[STEP02报告](../STEP02_TradingLab统一源码整合报告.md)、[未可用输入清单（原件未随候选发布，见说明）](RELEASE_EVIDENCE_SUMMARY.md)。
+- STEP02 有意未公开 5 份生产报告和若干原始捕获，17 份技术材料经过脱敏；这些材料不自动补入本轮。来源：[STEP02报告（历史版本，本地保留）](https://github.com/dianyicloud-stack/TradingLab/blob/7b61c5c3c443d1a6889440efdf3a640d53e376b2/STEP02_TradingLab%E7%BB%9F%E4%B8%80%E6%BA%90%E7%A0%81%E6%95%B4%E5%90%88%E6%8A%A5%E5%91%8A.md)、[未可用输入清单（原件未随候选发布，见说明）](RELEASE_EVIDENCE_SUMMARY.md)。
 - 旧 Agent 文档指向 `MARKET_SOURCE_CUTOVER.md` 和旧提取输入集成文件，当前公开工程无相应完整材料；当前运行依赖以实际桥接/Agent源码和锁为准。保留旧文档原文，不编造替代报告。旧文档链接缺口不作为本轮新链接已通过的依据。
 - 私人捕获依赖测试 13 项保持 SKIPPED；旧预算/生产探针/提取工具有保留源码不等于可以完整复现旧环境。未经脱敏和授权不执行历史生产探针或导入旧库。
 
-HISTORICAL：STEP05 新知识文档来源链接与源码论断记录于 [knowledge-checks.json（原件未随候选发布，见说明）](RELEASE_EVIDENCE_SUMMARY.md)。CURRENT：STEP06 为排除生成的账户/运行状态，将三份 STEP04 合成状态捕获保留在本地、不纳入 Git；旧报告与校验索引不改写，克隆后这些历史引用不可用，具体清单见 [STEP06报告](../STEP06_TradingLab本地Git初始化及安全审计报告.md)。未知事项的责任节点见 [HANDOFF_CURRENT](HANDOFF_CURRENT.md)。
+HISTORICAL：STEP05 新知识文档来源链接与源码论断记录于 [knowledge-checks.json（原件未随候选发布，见说明）](RELEASE_EVIDENCE_SUMMARY.md)。CURRENT：STEP06 为排除生成的账户/运行状态，将三份 STEP04 合成状态捕获保留在本地、不纳入 Git；旧报告与校验索引不改写，克隆后这些历史引用不可用，具体清单见 [STEP06报告（历史版本，本地保留）](https://github.com/dianyicloud-stack/TradingLab/blob/7b61c5c3c443d1a6889440efdf3a640d53e376b2/STEP06_TradingLab%E6%9C%AC%E5%9C%B0Git%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A.md)。未知事项的责任节点见 [HANDOFF_CURRENT](HANDOFF_CURRENT.md)。

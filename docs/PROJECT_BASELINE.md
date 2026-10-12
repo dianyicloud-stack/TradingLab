@@ -2,7 +2,7 @@
 
 # TradingLab 当前项目基线
 
-CURRENT · 2026-10-11。产品基线是用户确认的 **2026-09-26 单体 Web**；工程附 STEP02—04、STEP03-FIX、STEP04-FIX 已审核迁移成果。STEP06 已在本地 main 建立首次 Git Commit `6d655308096abc69cc3f3cb8d8df855cc170b45d`，尚未上传 GitHub。该提交记录当前审核源码，不证明精确恢复历史；迁移前的提交链仍为 UNVERIFIED。来源：[STEP06报告](../STEP06_TradingLab本地Git初始化及安全审计报告.md)、[迁移报告](../STEP04-FIX_发布安全整改报告.md)、[证据来源](KNOWLEDGE_SOURCES.md)。
+CURRENT · 2026-10-11。产品基线是用户确认的 **2026-09-26 单体 Web**；工程附 STEP02—04、STEP03-FIX、STEP04-FIX 已审核迁移成果。STEP06 已在本地 main 建立首次 Git Commit `6d655308096abc69cc3f3cb8d8df855cc170b45d`，尚未上传 GitHub。该提交记录当前审核源码，不证明精确恢复历史；迁移前的提交链仍为 UNVERIFIED。来源：[STEP06报告（历史版本，本地保留）](https://github.com/dianyicloud-stack/TradingLab/blob/7b61c5c3c443d1a6889440efdf3a640d53e376b2/STEP06_TradingLab%E6%9C%AC%E5%9C%B0Git%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%8A%E5%AE%89%E5%85%A8%E5%AE%A1%E8%AE%A1%E6%8A%A5%E5%91%8A.md)、[迁移报告（历史版本，本地保留）](https://github.com/dianyicloud-stack/TradingLab/blob/7b61c5c3c443d1a6889440efdf3a640d53e376b2/STEP04-FIX_%E5%8F%91%E5%B8%83%E5%AE%89%E5%85%A8%E6%95%B4%E6%94%B9%E6%8A%A5%E5%91%8A.md)、[证据来源](KNOWLEDGE_SOURCES.md)。
 
 ## 产品目标与边界（CURRENT）
 
