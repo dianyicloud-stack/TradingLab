@@ -5,7 +5,7 @@
   "business": {
     ".env.example": "7580c01c235d132d04f97314137bac5f9648ea6f9e7d0edcb6e70d9e3c673e87",
     ".env.telegram.example": "ac66ad65637ae39cae228cbfff2ffd012d5c63473cd4d1414c3408f6901fd9f8",
-    "README.md": "0da8a7b50fc5487fd66334df7b19bf92605e2a7f508f093c63d0f659fb6c4d52",
+    "README.md": "1ac0bb643c2ce8c56c8169d5b3b2dd6fa72c92aa579fabb972d04ae417c13cb5",
     "adapters/__init__.py": "2870b28f99dda5df65e9ec31952945033fb518acaa97b31146f5c20803dffb98",
     "adapters/ai/__init__.py": "3d87de518947a35b01e426ddd3142832da64808cf05232cd9609be5eeedc3885",
     "adapters/ai/advisory.py": "0d25bdebcf19e41f9e21a983635b385605671ebfdb945bd01fa4e04854537182",
