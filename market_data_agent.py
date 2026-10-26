@@ -56,14 +56,15 @@ def serve(service,root,port=0):
     if os.name!='nt':descriptor.chmod(0o600)
     return server
 
-def main():
+def main(argv=None):
+    parser=argparse.ArgumentParser();parser.add_argument('--data-root',type=Path,required=True);parser.add_argument('--port',type=int,default=0)
+    parser.add_argument('--source',choices=('USER','TEST'),default='TEST');parser.add_argument('--enable-market-network',action='store_true');parser.add_argument('--check',action='store_true');parser.add_argument('--start-paused',action='store_true')
+    args=parser.parse_args(argv)
     from shared.logging import configure_logging
     configure_logging()
     from dotenv import load_dotenv
     load_dotenv(Path(__file__).resolve().parent/'.env',override=False)
-    parser=argparse.ArgumentParser();parser.add_argument('--data-root',type=Path,required=True);parser.add_argument('--port',type=int,default=0)
-    parser.add_argument('--source',choices=('USER','TEST'),default='TEST');parser.add_argument('--enable-market-network',action='store_true');parser.add_argument('--check',action='store_true');parser.add_argument('--start-paused',action='store_true')
-    args=parser.parse_args();root=args.data_root.resolve()
+    root=args.data_root.resolve()
     if args.check:print(json.dumps({'node':node_path(),'data_root':str(root),'source':args.source,'market_network':args.enable_market_network}));return 0
     if root==Path(__file__).resolve().parent or 'legacy' in [p.lower() for p in root.parts]:raise ValueError('AGENT_DATA_ROOT_REJECTED')
     # Production needs an explicit owner-approved activation record; CLI flags alone do not switch Live.
