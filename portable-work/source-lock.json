@@ -225,7 +225,7 @@
     "legacy/account_engine/reporting.py": "8eebcf2b592b9b918868c0fa8b35b3f1f5a303fe79ae9cde1247398732bb9040",
     "legacy/tests/legacy_fixtures/sample_ack_receipt.json": "f29164e96e7184e05fba965e4e7052e5c6dbfd4d9ac9707055272a72672ba0b9",
     "legacy/tests/legacy_fixtures/sample_intraday_handoff.json": "b7bcdfa28a0edb0150f925fba8227a6ac828e0fe495dad9646a0a1126fcbb6e8",
-    "market_data_agent.py": "c34bd5c9f4f962cf255803d9aa336bfc94681f5e6258b6a3c092401f43b188dd",
+    "market_data_agent.py": "99d55b2c694d38d335de2d1cb7554d5c9f86746ed11f64fc35799db873c0f640",
     "requirements-lock.txt": "8a385696a2a43fd6d0bc3d35e6abb48a39636416bf679a467cc1415274bb4373",
     "requirements.txt": "a1b9c0f4e69470727c9f1f2c84b7818fb0b16e20a8dc1fb67864e8a250069331",
     "shared/__init__.py": "2870b28f99dda5df65e9ec31952945033fb518acaa97b31146f5c20803dffb98",
