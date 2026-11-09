@@ -6,7 +6,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock
 import unittest
 import tempfile,json,time
-import socket,struct
+import os,socket,struct
 from pathlib import Path
 from app.live.router import LiveRouter
 from bridges.market_agent import AgentClient,AgentFactBridge
@@ -116,7 +116,8 @@ class RuntimeReadIsolationTests(unittest.TestCase):
         try:
             connection=socket.create_connection(('127.0.0.1',server.server_port))
             connection.sendall(b'GET /test/read HTTP/1.0\r\nHost: 127.0.0.1\r\n\r\n')
-            self.assertTrue(entered.wait(1));connection.setsockopt(socket.SOL_SOCKET,socket.SO_LINGER,struct.pack('hh',1,0));connection.close()
+            # Windows linger is two unsigned shorts; POSIX linger is two ints.
+            self.assertTrue(entered.wait(1));connection.setsockopt(socket.SOL_SOCKET,socket.SO_LINGER,struct.pack('hh' if os.name=='nt' else 'ii',1,0));connection.close()
             self.assertEqual(timings.snapshot()['active'],1) # cancellation is not server completion
             release.set()
             for _ in range(100):

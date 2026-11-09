@@ -39,9 +39,13 @@ def alive(record):
             return code.value==259 and str((times[0].dwHighDateTime<<32)+times[0].dwLowDateTime)==record.get('created')
         finally:k.CloseHandle(h)
     try:
+        rest=Path(f'/proc/{pid}/stat').read_text().rsplit(')',1)[1].split()
+        # A zombie still accepts kill(pid, 0) until the parent waits. It has exited,
+        # so graceful stop must not treat it as running and wait out the drain.
+        if rest[0] in ('Z','X','x'):return False
         os.kill(pid,0)
-        return str(Path(f'/proc/{pid}/stat').read_text().rsplit(')',1)[1].split()[19])==record['created']
-    except (OSError,KeyError):return False
+        return rest[19]==record['created']
+    except (OSError,IndexError,KeyError):return False
 
 def process_table():
     if os.name!='nt':raise RuntimeError('PLATFORM_FORCE_CONTROL_NOT_VALIDATED')

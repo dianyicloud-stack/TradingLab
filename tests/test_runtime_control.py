@@ -34,6 +34,25 @@ class RuntimeControlTests(unittest.TestCase):
     def test_windows_identity_creation_and_pid_reuse(self):
         record=identity();self.assertTrue(alive(record));self.assertFalse(alive({**record,'created':'1'}))
         with self.assertRaisesRegex(RuntimeError,'SCOPE'):force_owned(record,ROOT,self.root,'web')
+    def test_exited_child_is_not_alive_before_reap(self):
+        script='from adapters.runtime_platform import identity\nimport json,sys\njson.dump(identity(),sys.stdout)\n'
+        child=subprocess.Popen([sys.executable,'-B','-c',script],cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL)
+        try:
+            record=json.loads(child.stdout.read())
+            if sys.platform.startswith('linux'):
+                end=time.monotonic()+2;state=''
+                while time.monotonic()<end:
+                    state=Path(f'/proc/{child.pid}/stat').read_text().rsplit(')',1)[1].split()[0]
+                    if state=='Z':break
+                    time.sleep(.01)
+                self.assertEqual(state,'Z')
+            else:
+                end=time.monotonic()+2
+                while time.monotonic()<end and alive(record):time.sleep(.01)
+            self.assertFalse(alive(record))
+            self.assertTrue(alive(identity()))
+        finally:
+            child.wait(5);child.stdout.close()
     def test_calendar_rest_and_unknown(self):
         c=TradingCalendar()
         for at,phase in [('2026-09-18T09:20:00+08:00','BEFORE_OPEN'),('2026-09-18T12:00:00+08:00','LUNCH_BREAK'),('2026-09-25T10:00:00+08:00','NON_TRADING_DAY'),('2027-09-25T10:00:00+08:00','CALENDAR_UNKNOWN')]:
