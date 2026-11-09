@@ -194,6 +194,7 @@ def serve(project,root,port=8765):
         supervisor=Supervisor(project,root,port);token=secrets.token_hex(32)
         class Handler(BaseHTTPRequestHandler):
             def do_POST(self):
+                stopping=False
                 try:
                     if self.path not in ('/control','/shutdown-supervisor') or self.headers.get('Host')!=f'127.0.0.1:{self.server.server_port}' or self.headers.get('Origin') is not None or not secrets.compare_digest(self.headers.get('Authorization',''),'Bearer '+token):raise ValueError('CONTROL_ACCESS_DENIED')
                     length=int(self.headers.get('Content-Length','0'))
@@ -202,12 +203,19 @@ def serve(project,root,port=8765):
                     if self.path=='/shutdown-supervisor':
                         if payload!={'confirm':'RELOAD_SUPERVISOR'}:raise ValueError('INVALID_CONFIRMATION')
                         if any(o['status'] in ('QUEUED','RUNNING') for o in supervisor.operations):raise ValueError('CONTROL_OPERATION_ACTIVE')
-                        result={'status':'STOPPING','services_preserved':True};supervisor.stop.set()
-                        Thread(target=self.server.shutdown,daemon=True).start()
+                        result={'status':'STOPPING','services_preserved':True};supervisor.stop.set();stopping=True
                     else:result=supervisor.submit(payload)
                     code=200
-                except (ValueError,TypeError) as error:result={'error':str(error)};code=400
-                data=json.dumps(result,ensure_ascii=False).encode();self.send_response(code);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(data)));self.end_headers();self.wfile.write(data)
+                except (ValueError,TypeError) as error:result={'error':str(error)};code=400;stopping=False
+                data=json.dumps(result,ensure_ascii=False).encode()
+                try:
+                    self.send_response(code);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(data)));self.end_headers();self.wfile.write(data)
+                    # Flush before stopping the accept loop. Otherwise serve_forever can
+                    # exit and drop this socket with the body still buffered.
+                    try:self.wfile.flush()
+                    except OSError:pass
+                finally:
+                    if stopping:Thread(target=self.server.shutdown,daemon=True).start()
             def log_message(self,*args):pass
         server=ThreadingHTTPServer(('127.0.0.1',0),Handler)
         atomic(root/'runtime/supervisor.json',{**identity(),'project':str(Path(project).resolve()),'data_root':str(root),

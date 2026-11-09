@@ -28,7 +28,7 @@ CURRENT · 2026-10-11。产品基线是用户确认的 **2026-09-26 单体 Web**
 
 Owner、写入顺序、账本与 Fact/Runtime 见 [DATA_OWNERSHIP](DATA_OWNERSHIP.md)、[CONTRACTS](CONTRACTS.md)、[架构补充](ARCHITECTURE_CURRENT.md)。`data/runtime` 含恢复水位，不是可统一清空的缓存。不得从文件存在推断产品有效或有权删除。
 
-固定环境：Python **3.12.14 x64**、Node **24.19.0**、25 项 Python 依赖；锁为 [dev/runtime-lock.json](../dev/runtime-lock.json)、[requirements-lock.txt](../requirements-lock.txt)。Portable 候选输入锁版本 `step07-fix-20261011.1`，SHA-256 `ab5ffa7dc72c624fc35cd7e02478f9a982c3039be0c6aaf3a5b43dc283b06ed3`，见 [source-lock.json](../portable-work/source-lock.json)。它不是 Git Commit。
+固定环境：Python **3.12.14 x64**、Node **24.19.0**、25 项 Python 依赖；锁为 [dev/runtime-lock.json](../dev/runtime-lock.json)、[requirements-lock.txt](../requirements-lock.txt)。Portable 候选输入锁版本 `step07-fix-20261011.1`，SHA-256 `dfb5d3917d5aa31ae7a4f60f8be8d3ca454b5f0a1f746a638a8ced0a29617dd5`，见 [source-lock.json](../portable-work/source-lock.json)。它不是 Git Commit。
 
 ## 当前开发入口（CURRENT）
 
