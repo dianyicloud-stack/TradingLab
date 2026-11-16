@@ -1,0 +1,56 @@
+# Locked platform is Windows. ubuntu-latest is omitted: force-owned still
+# raises PLATFORM_FORCE_CONTROL_NOT_VALIDATED when os.name is not nt, so the
+# official suite is not green there. Do not add that job until it is.
+name: Official checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: official-checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  windows:
+    name: Windows Python 3.12 / Node 24.19.0
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3.12.14
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12.14"
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+
+      - name: Set up Node 24.19.0
+        uses: actions/setup-node@v7
+        with:
+          node-version: "24.19.0"
+
+      - name: Install locked Python dependencies
+        run: python -m pip install -r requirements-lock.txt
+
+      - name: Run official checks
+        shell: pwsh
+        run: |
+          $node = (Get-Command node -ErrorAction Stop).Source
+          $version = (& $node --version).Trim()
+          if ($version -ne 'v24.19.0') { throw "Node must be v24.19.0, got $version ($node)" }
+          $env:TRADING_LAB_NODE = $node
+          Write-Host "TRADING_LAB_NODE=$env:TRADING_LAB_NODE"
+          python trading_lab.py --verify-baselines
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python -m unittest discover -s tests -v
+          exit $LASTEXITCODE
